@@ -5,7 +5,7 @@ body {
 }
 
 #container {
-    width: 60%;
+    width: 70%;
     margin: auto;
 }
 
@@ -18,7 +18,7 @@ body {
 
 #navbar {
     height: 100%;
-    width: 60%;
+    width: 70%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -75,4 +75,177 @@ body {
 
 i {
     margin-right: 15px;
+}
+
+#whatsNew {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+#whatsNew-Left-Section {
+    border-radius: 2px;
+    background-color: white;
+    width: 65%;
+    height: 100%;
+}
+
+#whatsNew-Left-Section img {
+    height: 250px;
+    width: 100%;
+}
+
+#whatsNew-Left-Section p,
+h3 {
+    padding-left: 10px;
+}
+
+#whatsNew-Right-Section p,
+h3 {
+    padding-left: 10px;
+}
+
+#whatsNew-Right-Section {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: space-between;
+}
+
+#whatsNew-Right-Section div {
+    border-radius: 2px;
+    background-color: white;
+    display: flex;
+    text-align: left;
+}
+
+#whatsNew-Right-Section img {
+    height: 160px;
+    width: 120px;
+}
+
+.rightcont {
+    display: flex;
+    flex-direction: column;
+}
+
+#last-minute-cont {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+#last-minute-cont::-webkit-scrollbar {
+    width: 0px;
+}
+
+#last-minute-cont div {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+.cont {
+    width: 350px;
+    height: 150px;
+}
+
+#banner {
+    position: relative;
+}
+
+#banner img {
+    width: 100%;
+    height: 300px;
+}
+
+#banner div {
+    position: absolute;
+    top: 180px;
+    color: white;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+#travel-tips-cont {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+#travel-tips-cont div {
+    margin: 10px;
+    background-color: white;
+}
+
+#travel-tips-cont img {
+    width: 100%;
+    height: 150px;
+}
+
+#vacation-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vacation-item {
+    position: relative;
+}
+
+.vacation-item img {
+    height: 200px;
+    width: 200px;
+    filter: brightness(60%);
+}
+
+.vacation-heads {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    color: white;
+}
+
+#appqr img {
+    margin-top: 100px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+#more-destination {
+    display: flex;
+    justify-content: space-between;
+    color: #999999;
+    font-size: larger;
+    margin-bottom: 40px;
+}
+
+.destination-item-child {
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+}
+
+#footlinks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: large;
+    line-height: 30px;
+}
+
+#footlinks li {
+    padding: none;
+    list-style-type: none;
+    color: #007E8F;
+    font-size: small;
+    float: none;
+}
+
+#copyright {
+    color: #999999;
+    line-height: 5px;
+    font-size: small;
+    margin-top: 50px;
 }

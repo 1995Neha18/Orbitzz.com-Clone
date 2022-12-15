@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="property.css">
+    <script src="https://kit.fontawesome.com/3f612bd57e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+    <div id="header">
+        <div id="navbar">
+            <div id="left-section"><span>GetSetStay.com</span></div>
+            <div id="right-section">
+                <button class="navbar-btn">Espanol</button>
+                <button class="navbar-btn">List your property</button>
+                <button class="navbar-btn">Support</button>
+                <button class="navbar-btn">Trips</button>
+                <button class="navbar-btn">Signin</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCHBAR -->
+    <div id="container">
+        <div class="heading">
+            <h2>Search Hotels</h2>
+        </div>
+        <div id="searchbar">
+            <div class="searchBarItem">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" name="" id="searchinput" placeholder="Going to">
+            </div>
+            <div class="searchBarItem">
+                <span>Check-in:</span>
+                <input id="d1" type="date" placeholder="checkin">
+                <span>Check-out:</span>
+                <input id="d2" type="date" placeholder="checkout">
+            </div>
+            <div class="searchBarItem">
+                <i class="fa-solid fa-user"></i>
+                <label for="">2 Traveler, 1 room</label>
+                <input type="number" name="" id="num">
+            </div>
+            <div class="searchButton">
+                <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div id="properties">
+            <div id="filters">
+                <div id="sort">
+                    <label for="" style="font-weight:bold">Filter by:</label>
+                    <label for="" style="font-weight:bold">Price</label>
+                    <select name="" id=""><option value="HTL">High to Low</option><option value="LTH">Low To High</option></select>
+
+                    <label for="" style="font-weight:bold">Star Rating</label>
+                    <select name="" id="filterstar">          
+                        <option value=""></option>
+                        <option value="1">*</option>
+                        <option value="2">* * </option>
+                        <option value="3">* * * </option>
+                        <option value="4">* * * *</option>
+                        <option value="5">* * * * *</option>
+                    </select>
+                    <button id="apply">Apply</button>
+                    <button id="reset">Reset</button>
+                </div>
+
+            </div>
+            <div id="searchedProperty">
+                <h2>Total Properties Found:</h2>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script src="property.js"></script>
