@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
+    <title>Sign-up page</title>
     <style>
 body  
 {  
@@ -13,7 +13,7 @@ body
     padding: 0;  
     font-family: 'Arial';  
 }  
-.login{  
+.signin{  
         width: 382px;  
         overflow: hidden;  
         margin: auto;  
@@ -30,7 +30,7 @@ body
     border: 2px solid;
     padding-left: 8px;  
 }  
-#Pass{  
+.Pass{  
     width: 100%;  
     height: 50px;  
     border: none;  
@@ -48,6 +48,8 @@ body
     color: white;  
     background-color: #C83259;
 cursor: pointer;
+  
+  
 }  
 span{  
     color: #616161 ;
@@ -90,6 +92,8 @@ div#forgot {
     cursor: pointer;
     
 }
+
+
 img#logo {
     width: 15%;
 }
@@ -110,29 +114,34 @@ img#logo {
 </head>
 <body>
    <!-- nav -->
-    <div class="nav">
-        <div class="n1">
-            <a href="https://www.freeiconspng.com/img/1156" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-left-icons-free-icons-in-2d--icon-search-engine--5.png" width="50" alt="Windows For Arrow Icons" /></a>
-     </div>
+   <div class="nav">
+       <div class="n1">
+           <a href="https://www.freeiconspng.com/img/1156" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-left-icons-free-icons-in-2d--icon-search-engine--5.png" width="50" alt="Windows For Arrow Icons" /></a>
+    </div>
 <div class="n1">
     <img id="logo" src="http://127.0.0.1:5500/likely-secretary-3214/Images/Teamlogo1.png" alt="" >
 </div>
 </div>
 
-    <div class="login">    
-        <h1>Sign in</h1><br>    
-    <form id="login">    
-        <!-- <label><b>User Name     
-        </b>    
-        </label>     -->
-        <input type="text" name="Uname" id="Uname" placeholder="Username">    
-        <br><br>    
-        <!-- <label><b>Password     
-        </b>    
-        </label>     -->
-        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
-        <br><br>    
-         
+
+
+
+  
+    <div class="signin">    
+        <h1>Create an account</h1><br>    
+    <form id="signin" >    
+   
+ 
+     <input type="text" name="" id="mail" class="Pass" placeholder="Email address">    
+     <br><br>  
+        <input type="text" name="" id="fname" class="Pass" placeholder="First name">    
+        <br><br>  
+          
+        <input type="text" name="" id="lname" class="Pass" placeholder="Last name">    
+        <br><br>  
+
+        <input type="Password" name="Pass" id="Password" class="Pass" placeholder="Password">    
+        <br><br>  
         <input type="checkbox" id="check">    
         <span>
 Keep me signed in</span>    
@@ -146,14 +155,11 @@ Keep me signed in</span>
      </div> 
      <br><br>
 
-        <input type="submit" onsubmit="fun(e)"  id="log" value="Log In Here">       
+        <input  type="submit" onclick="fun()"  id="log"  value="Log In Here">       
         <br><br>
-<div id="forgot">
-         <a href="#" >Forgot Password?</a>    
-    </div>
-    <br><br>
+
     <div id="para3">
-        Don't have an account? <a href="signup.html">Create one</a>
+        Already have an account? <a href="logIn.html">Sign in</a>
     </div> 
     <br><br>
     <div id="para4">
@@ -169,21 +175,22 @@ Keep me signed in</span>
    
 </body>
 <script>
-
-console.log("pop")
-    let mail = document.querySelector("#Uname").value ;
-    console.log(mail)
+    console.log("pop")
+    let mail = document.querySelector("#mail").value ;
+    let fname = document.querySelector("#fname")
+    let lname = document.querySelector("#lname")
+    let pass = document.querySelector("#Password")
+    
+    let sub= document.querySelector("#log")
+console.log(sub);
+// sub.addEventListener("submit",)
 
     function fun(e){
         e.preventDefault();
-        console.log(mail,"koko")
+        console.log("koko")
     }
-
-    // let fname = document.querySelector("#fname")
-    // let lname = document.querySelector("#lname")
-    // let pass = document.querySelector("#Password")
-    
-    // let sub= document.querySelector("#log")
+    // fun()
 
 </script>
+
 </html>
