@@ -1,9 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html{
+
+    scroll-behavior: smooth;
+}
 #main{
     margin: auto;
     margin-top: 50px;
-    height: 2000px;
+    height: auto;
     width: 80%;
     border: 1px solid red;
+    margin-bottom: 100px;
+    /* overflow-y: auto; */
 }
 #top-top{
 
@@ -43,6 +53,11 @@
 nav{
     display: flex;
     justify-content: space-between;
+    border: 1px solid red;
+    background-color: white;
+    /* display: block; */
+    position: sticky;
+    top: 0;
 }
 nav>#nav-tags{
     width: 40%;
@@ -50,13 +65,13 @@ nav>#nav-tags{
     justify-content: space-between;
     margin-left: 20px;
 }
-nav>#nav-tags>p{
+nav>#nav-tags>a{
     margin-top: 20px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
 
 }
-nav>#nav-tags>p:hover{
+nav>#nav-tags>a:hover{
     cursor:pointer;
     color: rgb(19, 140, 140);
     /* text-shadow: 10px; */
@@ -133,7 +148,7 @@ hr{
 }
 #avibility{
     width: 100%;
-    height: 80px;
+    height: 56px;
     margin-top: 102px;
     border: 1px solid red;
     display: flex;
@@ -153,6 +168,12 @@ hr{
     width: 38%;
     height: 100%;
     border: 1px solid blue;
+    display: flex;
+}
+.travelers>i{
+    color: gray;
+    font-size: 20px;
+    margin-top: 10px;
 }
 #check-btn{
     width: 20%;
@@ -162,7 +183,26 @@ hr{
 #check-btn>button{
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    background-color: #C83259;
+    /* font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+font-weight:200;
+    font-size: 20px;
+    border: none;
+    /* border: 1px solid red; */
+    color: #ffffff;
+}
+.room-child-div{
+    margin-top: 20px;
+    /* margin-bottom: 50px; */
+    border: 0.5px solid gray;
+    border-top: none;
+    border-radius: 5px;
+    /* padding-bottom:10px ; */
+}
+.room-child-div>hr{
+    opacity: 100%;
+   margin-top: 10px;
+   margin-bottom: 10px;
 }
 .room-child-div-details>div:nth-child(1)>h2{
     margin-left: 10px;
@@ -238,6 +278,118 @@ hr{
     width: 388px;
     height: 200px;
 }
+.extras-div{
+    margin-top: 10px;
+    margin-left: 16px;
+}
+.extras-div>div{
+    margin-top: 20px;
+}
+.input-box{
+    display: flex;
+    justify-content: space-between;
+}
+.input-box>div:nth-child(1){
+    width: 80%;
+}
+.input-box>div:nth-child(2){
+    width: 10%;
+}
+.input-box input[type=radio]{
+    display: inline-block;
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+.room-price{
+margin-bottom: 20px;
+}
+.room-price>div{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
+}
+.room-price>div>div>h4{
+color: rgb(16, 144, 144);
+}
+.room-price>div>div:nth-child(2) button{
+padding:8px 30px;
+border: none;
+color: #ffffff;
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 18px;
+background-color: #C83259;
+}
+#also-like-hotel-div{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+/* .also-like-hotel-div{
+    width: 30%;
+} */
+.also-like-hotel-div img{
+    width: 100%;
+    height: 208px;
+    border-radius: 5px;
+}
+.also-like-hotel-div>div:nth-child(2){
+    margin-left: 14px;
+    margin-right: 10px;
+}
+.green-colour{
+   color: #0E8445;
+}
+.also-like-hotel-div>div:nth-child(2)>div{
+    display: flex;
+    justify-content: space-between;
+    margin-top:10px ;
+}
+.also-like-hotel-div>div:nth-child(2)>div>div:nth-child(1){
+    margin-top: 30px;
+    
+}
+.also-like-hotel-div>div:nth-child(2)>div>div:nth-child(1)>p:nth-child(1){
+    color: #8C1397;
+    
+}
+.also-like-hotel-div>div:nth-child(2)>div>div:nth-child(1)>p:nth-child(2) span{
+    font-size: larger;
+    font-weight: bold;
+    
+}
+.also-like-hotel-div h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+#location-div{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#location-div>.location-about{
+    /* display: flex;
+    width: 100%; */
+    width: 30%;
+}
+#location-div>.location-about>p{
+   text-align: justify;
+   color: gray
+}
+#location-div>.location-about>.text-colour{
+   color: rgb(16, 144, 144);
+}
+#location-div>.google-map{
+    width: 65%;
+    border: 1px solid red;
+}
+section{
+    width: 50%;
+    height: 250px;
+    border: 1px solid red;
+}
 /* For Tablet View */
 @media screen and (min-device-width: 768px)
 and (max-device-width: 1024px) {
@@ -281,7 +433,7 @@ and (max-device-width: 1024px) {
 }
 
 /* For Mobile Phones Portrait or Landscape View */
-@media screen and (min-width:100px) and (max-width:767px) {
+@media screen and (min-width:10px) and (max-width:767px) {
     #main{
         margin: auto;
         margin-top: 50px;
@@ -356,12 +508,58 @@ and (max-device-width: 1024px) {
         width: 100%;
         
     }
+    #google-map-mini>.map{
+        width: 100%;
+        
+    }
     .walk{
         margin-left: 50px;
     }
-    /* #google-map-mini>div{
-        
-
+    #avibility{
+        display: grid;
+        grid-template-rows: repeat(1,1fr);
+    }
+    #avibility>div{
+        width: 100%;
+    }
+    #room-div{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .room-child-div-img>img{
+        width: 100%;
+        height: 260px;
+    }
+    #also-like-hotel-div{
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+    }
+    /* .also-like-hotel-div{
+        width: 30%;
     } */
-
+    .also-like-hotel-div img{
+        width: 100%;
+        height: 208px;
+        border-radius: 5px;
+    }
+    #location-div{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    #location-div>.location-about{
+        /* display: flex;
+        width: 100%; */
+        width: 100%;
+    }
+    #location-div>.location-about>p{
+       text-align: justify;
+    }
+    #location-div>.google-map{
+        width: 100%;
+        height: 200px;
+        border: 1px solid red;
+    }
   }
