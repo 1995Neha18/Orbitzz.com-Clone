@@ -1,90 +1,229 @@
-#heading{
-    text-align: center;
-    color: green;
-    font-size: 40px;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.Navbar {
+  background-color: #00253c;
+  height: 72px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+}
+.navright {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.navright a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+.logo {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo img {
+  height: 100%;
+  margin-left: 90px;
 }
 
-#main-container{
-    display: grid;
-    grid-template-columns: repeat(3 , 1fr);
-    grid-template-rows: auto;
-    width: 100%;
-    height: auto;
-    margin: auto;
-    border: 0px solid red;
-    
-    
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
 }
 
-#main-container>div{
-    margin-left: 30px;
-    width: 90%;
-    
-   border: 0px solid green;
-   margin: auto;
-   margin-top: 40px;
+#moreopt {
+  /* background-color:rgb(255,255,255); */
+  background-color: #00253c;
+}
+.middle {
+  width: 30%;
 }
 
-#main-container>div>img{
-    width: 100%;
-    height: 300px;
+.options {
+  width: 37%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.options a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* ------------------Navbar-end--------------------- */
+.Top {
+  width: 100%;
+  height: 400px;
+  margin-top: 72px;
+  background-image: url(https://forever.travel-assets.com/flex/flexmanager/images/2021/11/01/ORB_Storefront_6_imgB_1400x600_20211028.jpg?impolicy=fcrop&w=900&h=225&q=mediumHigh);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+.top-search {
+  width: 80%;
+  height: 75%;
+  background-color: rgb(245, 245, 245);
+  opacity: 0.9;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 40px;
+  align-items: center;
+}
+.optns {
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.optns a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn {
+  margin-left: 270px;
+}
+.btn button {
+  width: 170px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: rgb(200, 50, 89);
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+.Middle-Section {
+  width: 100%;
+  height: auto;
+  background-color: rgb(245, 245, 245);
+}
+.one {
+  width: 80%;
+  /* height: 200px; */
+  margin: auto;
+  /* margin-top: 180px; */
+  padding-top: 180px;
+  background-color: rgb(245, 245, 245);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.one img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+/* .mt{
+    height: 269px;
+    width: 257px;
+    background-color: rgb(139, 20, 20);
+    position: absolute;
+    top: 68px;
+    left: 369px;
+    right: 63px;
+    bottom: 61px;
+  } */
+.two {
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  margin-top: 40px;
+  background-color: rgb(245, 245, 245);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.two img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.three {
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  margin-top: 40px;
+  background-color: rgb(245, 245, 245);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+}
+.three img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.four {
+  width: 85%;
+  height: 250px;
+  margin-top: 60px;
+  margin-left: 150px;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: space-between;
+}
+.four > :nth-child(1) {
+  width: 75%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.four > :nth-child(2) {
+  width: 24%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.four img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.quote {
+ 
+  width: 50%;
+  height: 40px;
+  margin: auto;
+  margin-top: 60px;
+  margin-left: 150px;
+}
+h2 {
+  font-weight: bolder;
 }
 
-#main-container>div>div{
-    display: flex;
-    justify-content: space-around;
-}
-
-.btn_Buy{
-    background-color: green;
-    color: white;
-    border-radius: 10px;
-    border: none;
-}
-    
-.btn_Remove{
-    background-color: red;
-    color: white;
-    border-radius: 10px;
-    border: none;
-}
-#main-container>div>h2{
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-
-
- @media all and (min-width:768px) and (max-width:1024px){
-
-    #main-container{
-        display: grid;
-        grid-template-columns: repeat(2 , 1fr);
-        grid-template-rows: auto;
-        width: 100%;
-        height: auto;
-        margin: auto;
-        border: 0px solid red;
-        
-        
-    }
-
-
-}
-
-@media all and (min-width:324px) and (max-width:767px){
-
-    #main-container{
-        display: grid;
-        grid-template-columns: repeat(1 , 1fr);
-        grid-template-rows: auto;
-        width: 100%;
-        height: auto;
-        margin: auto;
-        border: 0px solid red;
-        
-        
-    }
-
-
-}
