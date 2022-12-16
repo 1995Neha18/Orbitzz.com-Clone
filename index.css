@@ -28,14 +28,15 @@
   font-weight: bold;
 }
 .logo {
-  width: 30%;
+  width: 40%;
   height: 100%;
+  margin-left: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 .logo img {
-  height: 100%;
+  height: 90%;
   margin-left: 90px;
 }
 
@@ -89,7 +90,7 @@
   align-items: center;
 }
 .optns {
-  width: 80%;
+  width: 70%;
   height: 50px;
   margin: auto;
   padding-top: 20px;
@@ -99,7 +100,7 @@
 .optns a {
   text-decoration: none;
   color: black;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 .btn {
@@ -187,7 +188,7 @@
 }
 .four {
   width: 85%;
-  height: 250px;
+  height: 200px;
   margin-top: 60px;
   margin-left: 150px;
   background-color: rgb(245, 245, 245);
@@ -215,15 +216,190 @@
   width: 100%;
   border-radius: 5px;
 }
-.quote {
- 
+.quote1 {
   width: 50%;
   height: 40px;
   margin: auto;
   margin-top: 60px;
   margin-left: 150px;
 }
-h2 {
-  font-weight: bolder;
+.quote1 > h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+.cont1 {
+  width: 80%;
+  height: 80px;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cont1 div {
+  width: 32%;
+  height: 90%;
+  padding-left: 8px;
+  padding-top: 5px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cont1 div h6 {
+  font-weight: bold;
+  color: #000;
+}
+.cont1 div p {
+  font-size: 13px;
+  font-weight: bold;
+  color: gray;
 }
 
+.quote2 {
+  width: 30%;
+  height: 40px;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+.quote2 > h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+.cards5 {
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.cards5 > :nth-child(1) {
+  width: 49%;
+  height: 100%;
+  background: url(https://forever.travel-assets.com/flex/flexmanager/images/2021/11/18/ORB_Blog_NationalParks_imgB_1199x399_20211117.jpg);
+  opacity: 2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cards5 > :nth-child(2) {
+  width: 49%;
+  height: 100%;
+  background: url(https://forever.travel-assets.com/flex/flexmanager/images/2021/11/18/ORB_Blog_RoadTrips_imgB_1199x399_20211117.jpg);
+  opacity: 2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hdng1 {
+  margin-left: 20px;
+  margin-top: 90px;
+  align-items: left;
+  text-align: left;
+}
+.hdng1 > h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+.hdng1 > h5 {
+  font-size: 16px;
+  margin-left: 8px;
+  color: #fff;
+}
+.bt2 {
+  width: 100px;
+  border: none;
+  border-radius: 2px;
+  margin-left: 9px;
+  color: #007e8f;
+}
+.cards6 {
+  width: 60%;
+  height: 100px;
+  margin: auto;
+  margin-top: 80px;
+}
+.cards6 > img {
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card7 {
+  width: 80%;
+  height: 320px;
+  margin: auto;
+  margin-top: 40px;
+}
+.card7 > img {
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.quote3 {
+  width: 30%;
+  height: 40px;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+.quote3 > h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+.cards8a {
+  width: 80%;
+  height: 40px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.cards8a div {
+  width: 32%;
+  padding-left: 10px;
+  background-color: rgb(255, 255, 255);
+  padding-top: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cards8a div h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: gray;
+}
+.cards8b {
+  width: 80%;
+  height: 40px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.cards8b div {
+  width: 32%;
+  padding-left: 10px;
+  background-color: rgb(255, 255, 255);
+  padding-top: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cards8b div h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: gray;
+}
+.quote4 {
+  width: 30%;
+  height: 30px;
+  margin-top: 80px;
+  margin-left: 150px;
+}
+.footer {
+  border: 1px solid red;
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  margin-top: 10px;
+}
