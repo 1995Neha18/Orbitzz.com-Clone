@@ -99,10 +99,17 @@ hr{
 #hotel-details-details{
     margin-left: 15px;
 }
+#hotel-details-details>div>div{
+    margin-top: 10px;
+}
+#hotel-details-details>h3{
+    margin-top: 20px;
+}
 .reviews{
     color: rgb(16, 144, 144);
 }
 #mini-fe{
+    /* margin-top: 30px; */
     width: 40%;
     display: flex;
     justify-content: space-between;
@@ -116,7 +123,7 @@ hr{
 }
 #google-map-mini{
     height: 250px;
-    width: 30%;
+    width: 40%;
     display: grid;
     grid-template-rows: repeat(2,1fr);
     /* border: 1px solid red; */
@@ -259,6 +266,8 @@ font-weight:200;
 }
 .room-child-div-details>.room-heilights>div:nth-child(2){
    margin-left: 15px;
+   margin-top: 17px;
+
 
     /* justify-content: space-between; */
 }
@@ -290,10 +299,10 @@ font-weight:200;
     justify-content: space-between;
 }
 .input-box>div:nth-child(1){
-    width: 80%;
+    width: 70%;
 }
 .input-box>div:nth-child(2){
-    width: 10%;
+    width: 15%;
 }
 .input-box input[type=radio]{
     display: inline-block;
@@ -384,6 +393,11 @@ background-color: #C83259;
 #location-div>.google-map{
     width: 65%;
     border: 1px solid red;
+}
+.map>iframe{
+    width: 100%;
+    height: 100%;
+
 }
 section{
     width: 50%;
