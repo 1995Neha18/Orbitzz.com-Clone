@@ -1,0 +1,276 @@
+let bookmarksData=[]
+let mainsection= document.getElementById("main");
+let hotelImgsection= document.getElementById("hotel-img")
+let hotelDetails=document.getElementById("hotel-details");
+let roomSection=document.getElementById("room-div");
+let hotelid=10;
+let userId=1;
+async function hotelPage(){
+    try{
+        let res= await fetch (`https://639ad40131877e43d677b046.mockapi.io/hotels/${hotelid}`);
+        if(res.ok==true){
+            let output= await res.json()
+            bookmarksData=[output];
+            renderProductpage(output)
+            console.log(bookmarksData)
+            // console.log(output["hotel-image-media src-1"])
+
+        }else{
+            alert("Bad request! Maybe you are missing your access token.")
+        }
+    }
+    catch(err){
+        alert(`${err} happend`)
+    }
+}
+hotelPage()
+
+async function hotelroomPage(){
+    try {
+        let roomRes= await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotel-rooms`);
+        if(roomRes.ok){
+            let roomoutput= await roomRes.json()
+            renderRoompage(roomoutput)
+        }else{
+            alert("Please try later")
+        }
+        // console.log(roomoutput);
+    } catch (error) {
+        alert(`Something worng ${error}`)
+    }
+}
+hotelroomPage()
+
+function renderProductpage(output) {
+//     // mainsection.innerHTML="";
+        let hotelData= `
+        <div class="img-left">
+            <img src="${output["hotel-image-media src-1"]}"
+                alt="Img-1">
+        </div>
+        <div class="img-right">
+            <div><img
+                    src="${output["hotel-image-media src-2"]}"
+                    alt="Img-2"></div>
+            <div><img
+                    src="${output["hotel-image-media src-3"]}"
+                    alt=""></div>
+            <div><img
+                    src="${output["hotel-image-media src-4"]}"
+                    alt=""></div>
+            <div><img
+                    src="https://images.trvl-media.com/hotels/1000000/470000/465100/465005/60f296fc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
+                    alt=""></div>
+        </div>`
+    let hotelDetailsData=`<div id="hotel-details-details">
+    <div>
+   <div>
+       <h1>${output["hotel-name"]}</h1>
+   </div>
+   <div><span class="fa fa-star checked"></span>
+       <span class="fa fa-star checked"></span>
+       <span class="fa fa-star checked"></span>
+       <span class="fa fa-star"></span>
+       <span class="fa fa-star"></span>
+   </div>
+   <div>
+       <h3> ${output["reviews"]}</h3>
+   </div>
+   <div>
+       <p class="reviews"> See all reviews &#8594;</p>
+   </div>
+</div>
+   <h3>Popular amenities</h3>
+   <div id="top-bottom">
+       <div id="mini-fe">
+           <div>
+               <div>
+                   <i class="fa-solid fa-hot-tub-person"></i> <span>Hot Tub</span>
+               </div>
+               <div><i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span></div>
+               <div><i class="fa-solid fa-spa"></i><span>Spa</span></div>
+               <div><span class="reviews">See all amenities &#8594;</span></div>
+           </div>
+           <div>
+               <div><i class="fa-sharp fa-solid fa-wifi"></i><span>Free Wifi</span></div>
+               <div><i class="fa-solid fa-snowflake"></i><span>Air conditioning</span></div>
+               <div><i class="fa-solid fa-paw"></i><span>Pet friendly</span></div>
+           </div>
+       </div>
+       <div id="google-map-mini">
+           <div class="map">
+               <iframe
+                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47544.037529784255!2d72.83169105113112!3d19.064280060402854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1671187344702!5m2!1sen!2sin"
+                   width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                   referrerpolicy="no-referrer-when-downgrade"></iframe>
+           </div>
+           <div id="explore-area">
+               <h3>Explore the area</h3>
+               <div>
+                   <div><i class="fa-solid fa-location-dot"></i><span>Miramar Beach</span></div>
+                   <div><span class="walk">20 min walk</span></div>
+               </div>
+               <div>
+                   <div> <i class="fa-solid fa-location-dot"></i><span>Campal Gardens</span></div>
+                   <div><span class="walk">30 min walk</span></div>
+               </div>
+               <div>
+                   <div> <i class="fa-solid fa-location-dot"></i><span>Reis Magos Fort</span></div>
+                   <div><span class="walk">15 min walk</span></div>
+               </div>
+               <div>
+                   <div> <i class="fa-solid fa-plane-departure"></i><span>Goa (GOI-Dabolim)</span>
+                   </div>
+                   <div> <span class="walk">30 min walk</span></div>
+               </div>
+           </div>
+       </div>
+   </div>`
+    return {
+
+       data1:` ${hotelImgsection.innerHTML=hotelData}`,
+       data2: `${hotelDetails.innerHTML=hotelDetailsData}`
+    }
+}
+
+function renderRoompage(roomoutput){
+
+let roomData= roomoutput.map((item)=>{
+    return `<div class="room-child-div">
+    <div class="room-child-div-img">
+        <img src="${item["hotel-room-image-media src-2"]}"
+            alt="roomimg-1">
+    </div>
+    <div class="room-child-div-details">
+        <div>
+            <h2>${item["hotel-name"]}</h2>
+        </div>
+        <div>
+            <p>${item.rating}</p>
+        </div>
+        <div class="room-heilights">
+            <div><i class="fa-solid fa-box"></i></div>
+            <div>
+                <p class="sq-ft">${item["room-size"]}</p>
+            </div>
+        </div>
+        <div class="room-heilights">
+            <div> <i class="fa-solid fa-user-group"></i></div>
+            <div>
+                <p class="total-capacity">${item["total-people"]} </p>
+            </div>
+        </div>
+        <div class="room-heilights">
+            <div> <i class="fa-solid fa-bed"></i></div>
+            <div>
+                <p class="total-bed">${item["beds"]}</p>
+            </div>
+        </div>
+        <div class="room-heilights">
+            <div> <i class="fa-sharp fa-solid fa-wifi"></i></div>
+            <div>
+                <p> Free WiFi</p>
+            </div>
+        </div>
+        <div class="room-heilights">
+            <div> <i class="fa-solid fa-p"></i></div>
+            <div>
+                <p class="p"> Free self parking</p>
+            </div>
+        </div>
+        <div class="room-heilights">
+            <div> <i class="fa-solid fa-check"></i></div>
+            <div>
+                <p> Reserve now, pay later</p>
+            </div>
+        </div>
+        <div>
+            <P class="green-colour">Fully refundable<i class="fa-solid fa-circle-info"></i></P>
+        </div>
+        <div>
+            <p>Before Thu, Jan 19</p>
+        </div>
+        <button>More details <span>></span></button>
+    </div>
+    <hr>
+    <div class="extras-div">
+        <h2>Extras</h2>
+        <div class="input-box">
+            <div><input type="radio" name="${item["hotel-name"]}" id="${item["hotel-name"]}-1" class="one" value="${item["option-price-1"]}"> <label for="${item["hotel-name"]}-1">No
+                    extras
+                </label></div>
+            <div>
+                <p>+$${item["option-price-1"]} </p>
+            </div>
+        </div>
+        <div class="input-box">
+            <div> <input type="radio" name="${item["hotel-name"]}" id="${item["hotel-name"]}-2"  value="${item["option-price-2"]}"> <label for="${item["hotel-name"]}-2">
+                    Breakfast for 2 + Airport shuttle</label></div>
+            <div>
+                <p>+ $${item["option-price-2"]}</p>
+            </div>
+        </div>
+        <div class="input-box">
+            <div><input type="radio" name="${item["hotel-name"]}" id="${item["hotel-name"]}-3" value="${item["option-price-3"]}"> <label for="${item["hotel-name"]}-3">
+                    Breakfast for 2 + Airport shuttle + Dinner + Special dea </label></div>
+            <div>
+                <p>+$${item["option-price-3"]}</p>
+            </div>
+        </div>
+        <div class="input-box">
+            <div> <input type="radio" name="${item["hotel-name"]}" id="${item["hotel-name"]}-4" value="${item["option-price-4-4"]}"> <label for="${item["hotel-name"]}-4">
+
+                    Breakfast for 2 + Airport shuttle + Lunch + Dinner + Casino credit</label></div>
+            <div><p>+$${item["option-price-4-4"]}</p></div>
+        </div>
+        <div class="room-price">
+            <h1>$${item["option-price-1"]}</h1>
+            <div>
+
+                <div>
+                    <p>$381 total</p>
+                    <p>includes taxes & fees</p>
+                    <h4>Price details ></h4>
+                </div>
+                <div>
+                    <p>We have 5 left</p>
+                    <button>Reserve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>`
+})
+// let input2;
+// let input3;
+// let input4;
+   let fetchedData= roomSection.innerHTML=roomData.join(" ");
+   return fetchedData;
+}
+
+let save= document.getElementById("save-button");
+save.addEventListener("click", bookmarks)
+async function bookmarks(){
+try {
+    let obj={
+        "userId":userId,
+        "bookmark":bookmarksData
+    }
+    console.log(obj)
+     let boookmarkRes= await fetch("https://639ad40131877e43d677b046.mockapi.io/bookmarks",{
+        method:"POST",
+            headers: {
+                "Content-Type": "application/json",
+          },
+        body:JSON.stringify(obj)
+    })
+    if(boookmarkRes.ok){
+        alert("Hurry, Hotel added to your trip");
+        // window.location.href = "#tologin";
+    }else{
+        alert("Bad request has been made.");
+    }
+} catch (error) {
+    alert("Data not fetch properly")
+}
+}
