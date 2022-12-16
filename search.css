@@ -69,8 +69,17 @@ body {
 
 #searchbtn {
     border: 0px;
-    background-color: #f5f5f5;
+    background-color: #e66e6e;
     font-size: x-large;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+}
+
+#searchbtn:hover {
+    background-color: #ef9292;
+    cursor: pointer;
 }
 
 i {
