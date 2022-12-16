@@ -49,27 +49,39 @@
                 <input type="number" name="" id="num">
             </div>
             <div class="searchButton">
-                <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="searchbtn">Search</button>
             </div>
         </div>
         <div id="properties">
             <div id="filters">
+                <div id="google">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.64333309117!2d72.74110225691092!3d19.08252231683216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1671200544491!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 <div id="sort">
+                    <hr style="width: 100%;">
+                    <label for="" style="font-weight:bold">Search by property name:</label>
+                    <input type="text" id="searchhotel" placeholder="e.g. Marriot">
+
+                    <button id="searchbutton" onclick="search()">SEARCH</button>
+                    <hr style="width: 100%;">
+
                     <label for="" style="font-weight:bold">Filter by:</label>
                     <label for="" style="font-weight:bold">Price</label>
                     <select name="" id=""><option value="HTL">High to Low</option><option value="LTH">Low To High</option></select>
-
-                    <label for="" style="font-weight:bold">Star Rating</label>
+                    <hr style="width: 100%;">
+                    <label for="" style="font-weight:bold"> Rating</label>
                     <select name="" id="filterstar">          
-                        <option value=""></option>
-                        <option value="1">*</option>
-                        <option value="2">* * </option>
-                        <option value="3">* * * </option>
-                        <option value="4">* * * *</option>
-                        <option value="5">* * * * *</option>
+                        <option value="">Choose Rating</option>
+                        <option value="1">3 - 5</option>
+                        <option value="2">5 - 7  </option>
+                        <option value="3">7 - 9</option>
+                        <option value="4">9 and above</option>
+                        
                     </select>
                     <button id="apply">Apply</button>
                     <button id="reset">Reset</button>
+                    <hr style="width: 100%;">
                 </div>
 
             </div>
