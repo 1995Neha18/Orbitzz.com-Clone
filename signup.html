@@ -132,15 +132,15 @@ img#logo {
     <form id="signin" >    
    
  
-     <input type="text" name="" id="mail" class="Pass" placeholder="Email address">    
+     <input type="email" name="" id="username" class="Pass" required placeholder="Email address">    
      <br><br>  
-        <input type="text" name="" id="fname" class="Pass" placeholder="First name">    
+        <input type="text" name="" id="fname" class="Pass" required placeholder="First name">    
         <br><br>  
           
-        <input type="text" name="" id="lname" class="Pass" placeholder="Last name">    
+        <input type="text" name="" id="lname" class="Pass" required placeholder="Last name">    
         <br><br>  
 
-        <input type="Password" name="Pass" id="Password" class="Pass" placeholder="Password">    
+        <input type="Password" name="Pass" id="password" required class="Pass" placeholder="Password">    
         <br><br>  
         <input type="checkbox" id="check">    
         <span>
@@ -155,7 +155,7 @@ Keep me signed in</span>
      </div> 
      <br><br>
 
-        <input  type="submit" onclick="fun()"  id="log"  value="Log In Here">       
+        <input  type="submit"  onsubmit="fun()" id="log"  value="Log In Here">       
         <br><br>
 
     <div id="para3">
@@ -176,21 +176,87 @@ Keep me signed in</span>
 </body>
 <script>
     console.log("pop")
-    let mail = document.querySelector("#mail").value ;
-    let fname = document.querySelector("#fname")
-    let lname = document.querySelector("#lname")
-    let pass = document.querySelector("#Password")
+//     let mail = document.querySelector("#mail").value ;
+//     let fname = document.querySelector("#fname")
+//     let lname = document.querySelector("#lname")
+//     let pass = document.querySelector("#Password")
     
-    let sub= document.querySelector("#log")
-console.log(sub);
-// sub.addEventListener("submit",)
+// // sub.addEventListener("submit",)
 
-    function fun(e){
-        e.preventDefault();
-        console.log("koko")
+//     function fun(e){
+    //         console.log("koko")
+    //     }
+    //     // fun()
+    
+    //     let sub= document.querySelector("#log")
+    // console.log(sub);
+
+
+// let searcg_btn = document.querySelector("#searchbtn");
+// sub.addEventListener("submit",fun);
+
+// let destination = document.querySelector("#searchinput").value;
+let arr = []
+let sam = document.querySelector(".signin form")
+// console.log(sam)
+sam.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    // console.log(e);
+    let all_in = document.querySelectorAll(".signin input");
+    let obj = {};
+
+    for(i=0; i<all_in.length-1; i++){
+    obj[all_in[i].id] = all_in[i].value 
+
+}
+console.log(obj,"obj ---")
+//  arr.push(obj)
+//  sessionStorage.setItem("login",JSON.stringify(arr))
+// console.log(JSON.parse( sessionStorage.getItem("login")))
+new_user(obj);
+
+})
+// console.log(arr,"arr")
+
+async function new_user(obj){
+    try{
+ let user_req = await fetch("https://639ad40131877e43d677b046.mockapi.io/users",{  
+ method : "POST",
+ headers : {
+    "Content-Type" : "application/json"
+
+ },
+ body : JSON.stringify(obj)
+}) 
+console.log(user_req,"data")
+
+}
+
+    catch (error){
+alert ("Error")
     }
-    // fun()
+}
+ 
+// async function new_user(obj){
+//     try{
+//  let user_req = await fetch("https://639ad40131877e43d677b046.mockapi.io/users",{  
+//  method : "GET",
+//  headers : {
+//     "Content" : "appication/json"
+//  },
+// //  body : JSON.stringify(obj)
+// }) 
+// arr.push(obj)
+//  sessionStorage.setItem("login",JSON.stringify(arr))
+// console.log(JSON.parse( sessionStorage.getItem("login")))
+// new_user(obj);
+// console.log(user_req,"DEB")
+// }
 
+//     catch (error){
+// alert ("Error")
+//     }
+// } 
 </script>
 
 </html>
