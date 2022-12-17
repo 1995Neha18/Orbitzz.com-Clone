@@ -190,27 +190,59 @@ new_user(obj);
 
 async function new_user(obj){
     try{
- let user_req = await fetch("https://639ad40131877e43d677b046.mockapi.io/users",{  
- method : "POST",
- headers : {
-    "Content-Type" : "application/json"
- },
- body : JSON.stringify(obj)
-}) 
-if(user_req.ok){
-let user = await user_req.json();
-console.log(user.id)
-sessionStorage.setItem("userid",user.id);
-window.location.href="index.html"
-}
+        let user_req = await fetch("https://639ad40131877e43d677b046.mockapi.io/users",{  
+            method : "POST",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(obj)
+        }) 
+        if(user_req.ok ===true){
+            let user = await user_req.json();
+            // console.log(user.id)
 
-}
+            if(user.username == "" || user.password ==""){
+                alert ("Invalid info")
+            }
+            sessionStorage.setItem("userid",user.id);
+            alert ("loged In Successfully")
+            window.location.href="index.html"
+           }
+           else{
+            alert("User not found");
+        }
 
-    catch (error){
+
+} 
+catch (error){
 alert ("Error")
     }
 }
- 
+
+
+// async function get_new_user(obj){
+//     try{
+//  let get_user_req = await fetch("https://639ad40131877e43d677b046.mockapi.io/users",{  
+//  method : "GET",
+//  headers : {
+//     "Content" : "appication/json"
+//  }
+
+// }) 
+// if(get_new_user.ok){
+//     let user1 = await get_user_req.json();
+//             // console.log(user1.id)
+//             console.log(user1.username)
+// }
+
+// get_new_user(obj);
+// console.log(get_user_req,"DEB")
+// }
+
+//     catch (error){
+// alert ("Error")
+//     }
+// }
 
 </script>
 

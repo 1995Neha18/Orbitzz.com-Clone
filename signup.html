@@ -109,15 +109,16 @@ img#logo {
 .n1 {
     width: 45%;
     margin: auto;
+    text-align: center;
 }
     </style>
 </head>
 <body>
    <!-- nav -->
    <div class="nav">
-       <div class="n1">
+       <!-- <div class="n1">
            <a href="https://www.freeiconspng.com/img/1156" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-left-icons-free-icons-in-2d--icon-search-engine--5.png" width="50" alt="Windows For Arrow Icons" /></a>
-    </div>
+    </div> -->
 <div class="n1">
     <img id="logo" src="http://127.0.0.1:5500/likely-secretary-3214/Images/Teamlogo1.png" alt="" >
 </div>
@@ -204,15 +205,15 @@ sam.addEventListener("submit",(e)=>{
     // console.log(e);
     let all_in = document.querySelectorAll(".signin input");
     let obj = {};
-
     for(i=0; i<all_in.length-1; i++){
-    obj[all_in[i].id] = all_in[i].value 
+        // all_in.value[i] == ""
+    obj[all_in[i].id] = all_in[i].value
 
 }
+alert("congratulation you registered successfully")
+window.location.href ="logIn.html"
 console.log(obj,"obj ---")
-//  arr.push(obj)
-//  sessionStorage.setItem("login",JSON.stringify(arr))
-// console.log(JSON.parse( sessionStorage.getItem("login")))
+
 new_user(obj);
 
 })
