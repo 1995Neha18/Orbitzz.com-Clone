@@ -26,6 +26,7 @@
   color: white;
   font-size: 15px;
   font-weight: bold;
+  cursor: pointer;
 }
 .logo {
   width: 40%;
@@ -38,12 +39,16 @@
 .logo img {
   height: 90%;
   margin-left: 90px;
+  cursor: pointer;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
   text-decoration: none;
+}
+.stays {
+  margin-left: 7px;
 }
 
 #moreopt {
@@ -60,6 +65,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: ;
 }
 .options a {
   text-decoration: none;
@@ -72,6 +78,7 @@
   width: 100%;
   height: 400px;
   margin-top: 72px;
+  cursor: pointer;
   background-image: url(https://forever.travel-assets.com/flex/flexmanager/images/2021/11/01/ORB_Storefront_6_imgB_1400x600_20211028.jpg?impolicy=fcrop&w=900&h=225&q=mediumHigh);
   background-size: cover;
   background-position: center;
@@ -105,6 +112,7 @@
 }
 .btn {
   margin-left: 270px;
+  cursor: pointer;
 }
 .btn button {
   width: 170px;
@@ -136,6 +144,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
@@ -166,6 +175,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -182,7 +192,7 @@
 .three img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -215,6 +225,7 @@
   height: 100%;
   width: 100%;
   border-radius: 5px;
+  cursor: pointer;
 }
 .quote1 {
   width: 50%;
@@ -227,6 +238,7 @@
   font-size: 32px;
   font-weight: bold;
   color: #000;
+  cursor: pointer;
 }
 .cont1 {
   width: 80%;
@@ -244,6 +256,7 @@
   padding-top: 5px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
 }
 .cont1 div h6 {
   font-weight: bold;
@@ -266,6 +279,7 @@
   font-size: 32px;
   font-weight: bold;
   color: #000;
+  cursor: pointer;
 }
 .cards5 {
   width: 80%;
@@ -298,16 +312,19 @@
   margin-top: 90px;
   align-items: left;
   text-align: left;
+  cursor: pointer;
 }
 .hdng1 > h3 {
   font-size: 24px;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
 }
 .hdng1 > h5 {
   font-size: 16px;
   margin-left: 8px;
   color: #fff;
+  cursor: pointer;
 }
 .bt2 {
   width: 100px;
@@ -315,6 +332,7 @@
   border-radius: 2px;
   margin-left: 9px;
   color: #007e8f;
+  cursor: pointer;
 }
 .cards6 {
   width: 60%;
@@ -326,6 +344,7 @@
   width: 100%;
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
 }
 .card7 {
   width: 80%;
@@ -337,6 +356,7 @@
   width: 100%;
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
 }
 .quote3 {
   width: 30%;
@@ -349,6 +369,7 @@
   font-size: 32px;
   font-weight: bold;
   color: #000;
+  cursor: pointer;
 }
 .cards8a {
   width: 80%;
@@ -364,6 +385,7 @@
   background-color: rgb(255, 255, 255);
   padding-top: 6px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
 }
 .cards8a div h4 {
   font-size: 18px;
@@ -384,6 +406,7 @@
   background-color: rgb(255, 255, 255);
   padding-top: 6px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
 }
 .cards8b div h4 {
   font-size: 18px;
@@ -395,11 +418,80 @@
   height: 30px;
   margin-top: 80px;
   margin-left: 150px;
+  cursor: pointer;
 }
 .footer {
-  border: 1px solid red;
   width: 80%;
-  height: 100px;
+  height: 390px;
   margin: auto;
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-top {
+  width: 23%;
+  height: 65%;
+}
+.footer-top h5 {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.footer-top p {
+  font-size: 12px;
+  color: #007e8f;
+}
+.footer-top p:hover {
+  color: #00253c;
+  cursor: pointer;
+}
+.footer-btm1 {
+  width: 80%;
+  height: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+.footer-btm1 p {
+  font-size: 12px;
+  color: #616161;
+}
+.footer-btm2 {
+  width: 80%;
+  height: 20px;
+  margin: auto;
+}
+.footer-btm2 p {
+  font-size: 12px;
+  color: #616161;
+}
+.footer-icon {
+  width: 85%;
+  height: 70px;
+  margin: auto;
+  margin-right: 75px;
+}
+.f-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  color: #007e8f;
+  border: none;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-left: 95%;
+  margin-top: 5px;
+}
+.f-btn:hover {
+  background-color: #007e8f;
+  color: #fff;
+}
+.locatn {
+  /* position: fixed;
+  width: 239px;
+  height: 350px;
+  z-index: 100;
+  top: 15rem;
+  left: 21rem;
+  /* display: none; */
+  background-color: #fff;
 }
