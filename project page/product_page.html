@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./product_page.css">
 </head>
 <!-- <div class=""> </div> -->
+
 <body>
     <header>
         <!-- <nav>
@@ -28,114 +29,37 @@
         </div>
         <div id="top-section">
             <div id="hotel-img">
-                <!-- <div class="img-left">
-                <img src="https://images.trvl-media.com/hotels/1000000/470000/465100/465005/60f296fc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
-                    alt="Img-1">
-            </div>
-            <div class="img-right">
-                <div><img
-                        src="https://images.trvl-media.com/hotels/10000000/9150000/9141400/9141328/defff5d3.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
-                        alt=""></div>
-                <div><img
-                        src="https://images.trvl-media.com/hotels/1000000/470000/465100/465005/5b2c7bd3.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
-                        alt=""></div>
-                <div><img
-                        src="https://images.trvl-media.com/hotels/1000000/470000/465100/465005/60f296fc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
-                        alt=""></div>
-                <div><img
-                        src="https://images.trvl-media.com/hotels/1000000/470000/465100/465005/60f296fc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
-                        alt=""></div>
-            </div> -->
+
             </div>
             <nav>
                 <div id="nav-tags">
                     <a href="#top-top">Overview</a>
                     <a href="#room-section">Rooms</a>
                     <a href="#location-div">Location</a>
-                    <a href="">Amenities</a>
-                    <a href="">Policies</a>
+                    <a href="#amenities-div">Amenities</a>
+                    <a href="#policies">Policies</a>
                 </div>
                 <div id="reserve-btn">
-                    <button>Reserve a room</button>
+                    <button id="resserve-button">Reserve a room</button>
                 </div>
             </nav>
             <hr>
             <div>
                 <div id="hotel-details">
-                    <!-- <div id="hotel-details-details">
-                         <div>
-                        <div>
-                            <h1>Goa Marriott Resort & Spa</h1>
-                        </div>
-                        <div><span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div>
-                            <h3> 9.0/10 Wonderful</h3>
-                        </div>
-                        <div>
-                            <p class="reviews"> See all reviews &#8594;</p>
-                        </div>
-                    </div>
-                        <h3>Popular amenities</h3>
-                        <div id="top-bottom">
-                            <div id="mini-fe">
-                                <div>
-                                    <div>
-                                        <i class="fa-solid fa-hot-tub-person"></i> <span>Hot Tub</span>
-                                    </div>
-                                    <div><i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span></div>
-                                    <div><i class="fa-solid fa-spa"></i><span>Spa</span></div>
-                                    <div><span class="reviews">See all amenities &#8594;</span></div>
-                                </div>
-                                <div>
-                                    <div><i class="fa-sharp fa-solid fa-wifi"></i><span>Free Wifi</span></div>
-                                    <div><i class="fa-solid fa-snowflake"></i><span>Air conditioning</span></div>
-                                    <div><i class="fa-solid fa-paw"></i><span>Pet friendly</span></div>
-                                </div>
-                            </div>
-                            <div id="google-map-mini">
-                                <div class="map">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47544.037529784255!2d72.83169105113112!3d19.064280060402854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1671187344702!5m2!1sen!2sin"
-                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                                <div id="explore-area">
-                                    <h3>Explore the area</h3>
-                                    <div>
-                                        <div><i class="fa-solid fa-location-dot"></i><span>Miramar Beach</span></div>
-                                        <div><span class="walk">20 min walk</span></div>
-                                    </div>
-                                    <div>
-                                        <div> <i class="fa-solid fa-location-dot"></i><span>Campal Gardens</span></div>
-                                        <div><span class="walk">30 min walk</span></div>
-                                    </div>
-                                    <div>
-                                        <div> <i class="fa-solid fa-location-dot"></i><span>Reis Magos Fort</span></div>
-                                        <div><span class="walk">15 min walk</span></div>
-                                    </div>
-                                    <div>
-                                        <div> <i class="fa-solid fa-plane-departure"></i><span>Goa (GOI-Dabolim)</span>
-                                        </div>
-                                        <div> <span class="walk">30 min walk</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+
 
                 </div>
             </div>
-            <!-- </div> -->
+
             <div id="room-section">
                 <div id="avibility">
                     <div id="check-date">
-                        <div class="check-in-out"></div>
-                        <div class="check-in-out"></div>
+                        <div class="check-in-out">
+                            <p>Check-in:</p> <input type="date" id="chekIn">
+                        </div>
+                        <div class="check-in-out">
+                            <p>Check-out:</p> <input type="date" id="checkOut">
+                        </div>
                     </div>
                     <div class="travelers"><i class="fa-solid fa-user"></i>
                         <div>
@@ -143,408 +67,15 @@
                             <p>1 room, 2 travelers</p>
                         </div>
                     </div>
-                    <div id="check-btn"><button>Check availability</button></div>
+                    <div id="check-btn"><button id="click-check-btn">Check availability</button></div>
                 </div>
                 <div id="room-div">
-                    <div class="room-child-div">
-                        <div class="room-child-div-img">
-                            <img src="https://images.trvl-media.com/hotels/1000000/530000/523000/522986/bd4beba6.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
-                                alt="">
-                        </div>
-                        <div class="room-child-div-details">
-                            <div>
-                                <h2>Room, 1 King Bed, Non Smoking, Garden View</h2>
-                            </div>
-                            <div>
-                                <p><span>4/5 </span>guest room rating</p>
-                            </div>
-                            <div class="room-heilights">
-                                <div><i class="fa-solid fa-box"></i></div>
-                                <div>
-                                    <p class="sq-ft">419 sq ft</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-user-group"></i></div>
-                                <div>
-                                    <p class="total-capacity"> Sleeps 3</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-bed"></i></div>
-                                <div>
-                                    <p class="total-bed"> 1 King Bed</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-sharp fa-solid fa-wifi"></i></div>
-                                <div>
-                                    <p> Free WiFi</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-p"></i></div>
-                                <div>
-                                    <p class="p"> Free self parking</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-check"></i></div>
-                                <div>
-                                    <p> Reserve now, pay later</p>
-                                </div>
-                            </div>
-                            <div>
-                                <P class="green-colour">Fully refundable<i class="fa-solid fa-circle-info"></i></P>
-                            </div>
-                            <div>
-                                <p>Before Thu, Jan 19</p>
-                            </div>
-                            <button>More details <span>></span></button>
-                        </div>
-                        <hr>
-                        <div class="extras-div">
-                            <h2>Extras</h2>
-                            <div class="input-box">
-                                <div><input type="radio" name="extra-survice" id="11"> <label for="11">No
-                                        extras
-                                    </label></div>
-                                <div>
-                                    <p>+ $0</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div> <input type="radio" name="extra-survice" id="extra-12"> <label for="extra-12">
-                                        Breakfast for 2 + Airport shuttle</label></div>
-                                <div>
-                                    <p>+ $13</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div><input type="radio" name="extra-survice" id="extra-13"> <label for="extra-13">
-                                        Breakfast for 2 + Airport shuttle + Dinner + Special dea </label></div>
-                                <div>
-                                    <p>+ $36</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div> <input type="radio" name="extra-survice" id="extra-14"> <label for="extra-14">
 
-                                        Breakfast for 2 + Airport shuttle + Lunch + Dinner + Casino credit</label></div>
-                                <div>+
-                                    $50</div>
-                            </div>
-                            <div class="room-price">
-                                <h1>$293</h1>
-                                <div>
-
-                                    <div>
-                                        <p>$381 total</p>
-                                        <p>includes taxes & fees</p>
-                                        <h4>Price details ></h4>
-                                    </div>
-                                    <div>
-                                        <p>We have 5 left</p>
-                                        <button>Reserve</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="room-child-div">
-                        <div class="room-child-div-img">
-                            <img src="https://images.trvl-media.com/hotels/1000000/530000/523000/522986/bd4beba6.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
-                                alt="">
-                        </div>
-                        <div class="room-child-div-details">
-                            <div class="room-div-heading">
-                                <h2>Room, 1 King Bed, Non Smoking, Garden View</h2>
-
-                            </div>
-                            <div>
-                                <p><span>4/5 </span>guest room rating</p>
-                            </div>
-                            <div class="room-heilights">
-                                <div><i class="fa-solid fa-box"></i></div>
-                                <div>
-                                    <p class="sq-ft">419 sq ft</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-user-group"></i></div>
-                                <div>
-                                    <p class="total-capacity"> Sleeps 3</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-bed"></i></div>
-                                <div>
-                                    <p class="total-bed"> 1 King Bed</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-sharp fa-solid fa-wifi"></i></div>
-                                <div>
-                                    <p> Free WiFi</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-p"></i></div>
-                                <div>
-                                    <p class="p"> Free self parking</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-check"></i></div>
-                                <div>
-                                    <p> Reserve now, pay later</p>
-                                </div>
-                            </div>
-                            <div>
-                                <P>Fully refundable<i class="fa-solid fa-circle-info"></i></P>
-                            </div>
-                            <div>
-                                <p>Before Thu, Jan 19</p>
-                            </div>
-                            <button>More details <span>></span></button>
-                        </div>
-                        <div class="extras-div">
-                            <h2>Extras</h2>
-                            <div class="input-box">
-                                <div><input type="radio" name="extra-survice" id="no-extras"> <label for="no-extras">No
-                                        extras
-                                    </label></div>
-                                <div>
-                                    <p>+ $0</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div> <input type="radio" name="extra-survice" id="extra-21"> <label for="extra-21">
-                                        Breakfast for 2 + Airport shuttle</label></div>
-                                <div>
-                                    <p>+ $13</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div><input type="radio" name="extra-survice" id="extra-22"> <label for="extra-22">
-                                        Breakfast for 2 + Airport shuttle + Dinner + Special dea </label></div>
-                                <div>
-                                    <p>+ $36</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div> <input type="radio" name="extra-survice" id="extra-23"> <label for="extra-23">
-
-                                        Breakfast for 2 + Airport shuttle + Lunch + Dinner + Casino credit</label></div>
-                                <div>+
-                                    $50</div>
-                            </div>
-                            <div class="room-price">
-                                <h1>$293</h1>
-                                <div>
-
-                                    <div>
-                                        <p>$381 total</p>
-                                        <p>includes taxes & fees</p>
-                                        <h4>Price details ></h4>
-                                    </div>
-                                    <div>
-                                        <p>We have 5 left</p>
-                                        <button>Reserve</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="room-child-div">
-                        <div class="room-child-div-img">
-                            <img src="https://images.trvl-media.com/hotels/1000000/530000/523000/522986/bd4beba6.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
-                                alt="">
-                        </div>
-                        <div class="room-child-div-details">
-                            <div>
-                                <h2>Room, 1 King Bed, Non Smoking, Garden View</h2>
-                            </div>
-                            <div>
-                                <p><span>4/5 </span>guest room rating</p>
-                            </div>
-                            <div class="room-heilights">
-                                <div><i class="fa-solid fa-box"></i></div>
-                                <div>
-                                    <p class="sq-ft">419 sq ft</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-user-group"></i></div>
-                                <div>
-                                    <p class="total-capacity"> Sleeps 3</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-bed"></i></div>
-                                <div>
-                                    <p class="total-bed"> 1 King Bed</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-sharp fa-solid fa-wifi"></i></div>
-                                <div>
-                                    <p> Free WiFi</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-p"></i></div>
-                                <div>
-                                    <p class="p"> Free self parking</p>
-                                </div>
-                            </div>
-                            <div class="room-heilights">
-                                <div> <i class="fa-solid fa-check"></i></div>
-                                <div>
-                                    <p> Reserve now, pay later</p>
-                                </div>
-                            </div>
-                            <div>
-                                <P>Fully refundable<i class="fa-solid fa-circle-info"></i></P>
-                            </div>
-                            <div>
-                                <p>Before Thu, Jan 19</p>
-                            </div>
-                            <button>More details <span>></span></button>
-                        </div>
-                        <div class="extras-div">
-                            <h2>Extras</h2>
-                            <div class="input-box">
-                                <div><input type="radio" name="extra-survice" id="no-extras"> <label for="no-extras">No
-                                        extras
-                                    </label></div>
-                                <div>
-                                    <p>+ $0</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div> <input type="radio" name="extra-survice" id="extra-31"> <label for="extra-31">
-                                        Breakfast for 2 + Airport shuttle</label></div>
-                                <div>
-                                    <p>+ $13</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div><input type="radio" name="extra-survice" id="extra-32"> <label for="extra-32">
-                                        Breakfast for 2 + Airport shuttle + Dinner + Special dea </label></div>
-                                <div>
-                                    <p>+ $36</p>
-                                </div>
-                            </div>
-                            <div class="input-box">
-                                <div> <input type="radio" name="extra-survice" id="extra-33"> <label for="extra-33">
-
-                                        Breakfast for 2 + Airport shuttle + Lunch + Dinner + Casino credit</label></div>
-                                <div>+
-                                    $50</div>
-                            </div>
-                            <div class="room-price">
-                                <h1>$293</h1>
-                                <div>
-
-                                    <div>
-                                        <p>$381 total</p>
-                                        <p>includes taxes & fees</p>
-                                        <h4>Price details ></h4>
-                                    </div>
-                                    <div>
-                                        <p>We have 5 left</p>
-                                        <button>Reserve</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <h2 style="margin-top: 31px;">You may also like</h2>
             <div id="also-like-hotel-div">
-                <div class="also-like-hotel-div">
-                    <div><img
-                            src="https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/61000000/60650000/60643100/60643033/e7dadcf7_b.jpg"
-                            alt="">
-                    </div>
-                    <div>
-                        <h2>Holiday Inn Goa Candolim, an IHG Hotel</h2>
-                        <p>Chapora</p>
-                        <i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span>
-                        <p>Fully refundable</p>
-                        <p>Reserve now, pay later</p>
-                        <div>
 
-                            <div>
-                                <p><i class="fa-solid fa-money-bill"></i>Earn $6.19 Orbucks</p>
-                                <p><span>9/10</span> Wonderful (5 reviews)</p>
-                            </div>
-                            <div>
-                                <h1>$240</h1>
-                                <p>$330 total</p>
-                                <p>includes taxes</p>
-                                <p> & fees</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="also-like-hotel-div">
-                    <div><img
-                            src="https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/61000000/60650000/60643100/60643033/e7dadcf7_b.jpg"
-                            alt="">
-                    </div>
-                    <div>
-                        <h2>Holiday Inn Goa Candolim, an IHG Hotel</h2>
-                        <p>Chapora</p>
-                        <i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span>
-                        <p>Fully refundable</p>
-                        <p>Reserve now, pay later</p>
-                        <div>
-
-                            <div>
-                                <p><i class="fa-solid fa-money-bill"></i>Earn $6.19 Orbucks</p>
-                                <p><span>9/10</span> Wonderful (5 reviews)</p>
-                            </div>
-                            <div>
-                                <h1>$240</h1>
-                                <p>$330 total</p>
-                                <p>includes taxes</p>
-                                <p> & fees</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="also-like-hotel-div">
-                    <div><img
-                            src="https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/61000000/60650000/60643100/60643033/e7dadcf7_b.jpg"
-                            alt="">
-                    </div>
-                    <div>
-                        <h2>Holiday Inn Goa Candolim, an IHG Hotel</h2>
-                        <p>Chapora</p>
-                        <i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span>
-                        <p class="green-colour">Fully refundable</p>
-                        <p class="green-colour">Reserve now, pay later</p>
-                        <div>
-
-                            <div>
-                                <p><i class="fa-solid fa-money-bill"></i>Earn $6.19 Orbucks</p>
-                                <p><span>9/10</span> Wonderful (5 reviews)</p>
-                            </div>
-                            <div>
-                                <h1>$240</h1>
-                                <p>$330 total</p>
-                                <p>includes taxes</p>
-                                <p> & fees</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
 
             </div>
             <div id="location-div">
@@ -562,7 +93,144 @@
                     <p class="text-colour">View more Resorts in Panaji &#8594;</p>
                 </div>
                 <div class="google-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47544.037529784255!2d72.83169105113112!3d19.064280060402854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1671187344702!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div id="explore-area">
+                </div>
+            </div>
+            <div id="amenities-div">
+                <div>
+                    <h1>Property amenities</h1>
+                </div>
+                <div>
+                    <i class="fa-sharp fa-solid fa-wifi"></i><span>Internet</span>
+                    <p>Available in all rooms: Free WiFi and wired Internet</p>
+                    <p>Available in some public areas: Free WiFi and wired Internet</p>
+                    <i class="fa-solid fa-p"></i><span>Parking and transportation</span>
+                    <p>Free extended parking on site</p>
+                    <p>Free valet parking on site</p>
+                    <p>Limited onsite parking</p>
+                    <p>Wheelchair-accessible parking and van</p>
+                    <p>parking available</p>
+                    <p>Free offsite parking</p>
+                    <p>24-hour roundtrip train station shuttle</p>
+                    <i class="fa-solid fa-bowl-food"></i><span>Food and drink</span>
+                    <p>Buffet breakfast available for a fee daily 7:00 AM–11 AM: INR 1000 for adults and INR 500 for
+                        children</p>
+                    <p>3 restaurants and 1 coffee shop/cafe</p>
+                    <p>1 swim-up bar, 1 poolside bar and 1 bar</p>
+                    <p>24-hour room service</p>
+                    <i class="fa-solid fa-bowl-food"></i><span>Restaurants on site</span>
+                    <p>Waterfront Terrace Bar</p>
+                    <p>Simply Grills</p>
+                    <p>AZ.U.R</p>
+                    <p>Goa Baking Company</p>
+                    <i class="fa-solid fa-rectangles-mixed"></i><span>Things to do</span>
+                    <p>2 outdoor pools</p>
+                    <p>Aerobics classes</p>
+                    <p>Arcade/game room</p>
+                    <p>Bicycle rentals</p>
+                    <p>Fitness center</p>
 
+                </div>
+                <div>
+                    <i class="fa-solid fa-bell-concierge"></i><span>Guest services</span>
+                    <p>24-hour front desk</p>
+                    <p>Change of towels (on request)</p>
+                    <p>Concierge services</p>
+                    <p>Daily housekeeping</p>
+                    <p>Dry cleaning service</p>
+                    <p>Hair salon</p>
+                    <p>Laundry facilities</p>
+                    <p>Luggage storage</p>
+                    <p>Multilingual staff</p>
+                    <p>Porter/bellhop</p>
+                    <p>Tour/ticket assistance</p>
+                    <p>Turndown service</p>
+                    <p>Wedding services</p>
+                    <i class="fa-solid fa-toolbox"></i><span>Business services</span>
+                    <p>Business center</p>
+                    <p>Computer station</p>
+                    <p>Conference center (9139 square feet of space)
+                    </p>
+                    <p>Coworking space</p>
+                    <p>Meeting rooms - 6</p>
+                    <!-- <i class="fa-solid fa-bench-tree"></i><span>Outdoors</span>
+                    <p>Beachfront location</p>
+                    <p>Free pool cabanas</p>
+                    <p>Garden</p>
+                    <p>Pool sun loungers</p>
+                    <p>Pool umbrellas</p>
+                    <p>Terrace</p> -->
+                    <i class="fa-solid fa-spa"></i><span>Spa</span>
+                    <p>5 treatment rooms</p>
+                    <p>Aromatherapy</p>
+                    <p>Ayurvedic treatments</p>
+                    <p>Body scrubs</p>
+                    <p>Body treatments</p>
+                    <p>Body wrap</p>
+                    <p>Couples treatment room(s)</p>
+                    <p>Facials</p>
+                    <p>Facials</p>
+                </div>
+            </div>
+            <hr>
+            <div id="policies">
+                <div>
+                    <h2>Policies</h2>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <h2>Check-in</h2>
+                            <p>Check-in from 4:00 PM - midnight</p>
+                            <p>Early check-in subject to availability</p>
+                            <p>Early check-in is available for a fee</p>
+                            <p>Express check-in available</p>
+                            <p>Minimum check-in age - 18</p>
+                        </div>
+                        <div>
+                            <h2>Check-out</h2>
+                            <p>Check-out before noon</p>
+                            <p>Late check-out subject to availability</p>
+                            <p>A late check-out fee will be charged</p>
+                            <p>Express check-out available</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Special check-in instructions</h2>
+                        <p>This property offers transfers from the airport and train station (surcharges may apply); to
+                            arrange pick-up, guests must contact the property 48 hours prior to arrival, using the
+                            contact
+                            information on the booking confirmation</p>
+                        <p>Guests planning to arrive outside of normal check-in hours will receive an email with
+                            check-in
+                            instructions; front desk staff will greet guests on arrival</p>
+                        <p>For more details, please contact the property using the information on the booking
+                            confirmation
+                        </p>
+                        <p>To register at this property, guests who are Indian citizens must provide a valid photo
+                            identity
+                            card issued by the Government of India; travelers who are not citizens of India must present
+                            a
+                            valid passport and visa.</p>
+                        <h2>Access methods</h2>
+                        <p>Staffed front desk</p>
+                        <h2>Pets</h2>
+                        <p>Pets allowed for an extra charge of INR 2000 per pet, per night, plus a deposit of INR 5000
+                            per stay
+                            Food and water bowls and an off-leash area are available</p>
+                        <h2>Children and extra beds</h2>
+                        <p>Children are welcome</p>
+                        <p>2 children, up to the age of 11 years, can stay for free if using existing beds when
+                            occupying the parent or guardian's room</p>
+                        <p>Rollaway/extra beds are available for INR 1000.0 per night</p>
+                        <p>Free cribs are available on request at the property</p>
+                        <h2>Property payment types</h2>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,20 +1,24 @@
 let bookmarksData=[]
+let obj={}
 let mainsection= document.getElementById("main");
 let hotelImgsection= document.getElementById("hotel-img")
 let hotelDetails=document.getElementById("hotel-details");
-let roomSection=document.getElementById("room-div");
-let hotelid=10;
-let userId=1;
+let hotelid=sessionStorage.getItem("hotelid");
+let userID=sessionStorage.getItem("userid");
+let city=sessionStorage.getItem("city");
 async function hotelPage(){
     try{
         let res= await fetch (`https://639ad40131877e43d677b046.mockapi.io/hotels/${hotelid}`);
         if(res.ok==true){
             let output= await res.json()
             bookmarksData=[output];
+            obj=output;
+            console.log(obj)
+            sessionStorage.setItem("city", output.city);
             renderProductpage(output)
-            console.log(bookmarksData)
+            // console.log(bookmarksData)
             // console.log(output["hotel-image-media src-1"])
-
+            
         }else{
             alert("Bad request! Maybe you are missing your access token.")
         }
@@ -24,13 +28,14 @@ async function hotelPage(){
     }
 }
 hotelPage()
-
+let roomArr=[]
 async function hotelroomPage(){
     try {
         let roomRes= await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotel-rooms`);
         if(roomRes.ok){
-            let roomoutput= await roomRes.json()
-            renderRoompage(roomoutput)
+            let roomoutput= await roomRes.json();
+            roomArr=[...roomoutput]
+            renderRoompage(roomArr)
         }else{
             alert("Please try later")
         }
@@ -42,103 +47,145 @@ async function hotelroomPage(){
 hotelroomPage()
 
 function renderProductpage(output) {
-//     // mainsection.innerHTML="";
+    //     // mainsection.innerHTML="";
         let hotelData= `
         <div class="img-left">
-            <img src="${output["hotel-image-media src-1"]}"
+        <img src="${output["hotel-image-media src-1"]}"
                 alt="Img-1">
-        </div>
-        <div class="img-right">
-            <div><img
+                </div>
+                <div class="img-right">
+                <div><img
                     src="${output["hotel-image-media src-2"]}"
                     alt="Img-2"></div>
             <div><img
                     src="${output["hotel-image-media src-3"]}"
                     alt=""></div>
-            <div><img
+                    <div><img
                     src="${output["hotel-image-media src-4"]}"
                     alt=""></div>
-            <div><img
+                    <div><img
                     src="https://images.trvl-media.com/hotels/1000000/470000/465100/465005/60f296fc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
                     alt=""></div>
         </div>`
-    let hotelDetailsData=`<div id="hotel-details-details">
+        let hotelDetailsData=`<div id="hotel-details-details">
     <div>
-   <div>
-       <h1>${output["hotel-name"]}</h1>
+    <div>
+    <h1>${output["hotel-name"]}</h1>
    </div>
    <div><span class="fa fa-star checked"></span>
        <span class="fa fa-star checked"></span>
        <span class="fa fa-star checked"></span>
        <span class="fa fa-star"></span>
        <span class="fa fa-star"></span>
-   </div>
-   <div>
+       </div>
+       <div>
        <h3> ${output["reviews"]}</h3>
-   </div>
+       </div>
    <div>
-       <p class="reviews"> See all reviews &#8594;</p>
+   <p class="reviews"> See all reviews &#8594;</p>
    </div>
 </div>
    <h3>Popular amenities</h3>
    <div id="top-bottom">
-       <div id="mini-fe">
+   <div id="mini-fe">
            <div>
-               <div>
+           <div>
                    <i class="fa-solid fa-hot-tub-person"></i> <span>Hot Tub</span>
-               </div>
-               <div><i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span></div>
-               <div><i class="fa-solid fa-spa"></i><span>Spa</span></div>
+                   </div>
+                   <div><i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span></div>
+                   <div><i class="fa-solid fa-spa"></i><span>Spa</span></div>
                <div><span class="reviews">See all amenities &#8594;</span></div>
-           </div>
+               </div>
            <div>
-               <div><i class="fa-sharp fa-solid fa-wifi"></i><span>Free Wifi</span></div>
+           <div><i class="fa-sharp fa-solid fa-wifi"></i><span>Free Wifi</span></div>
                <div><i class="fa-solid fa-snowflake"></i><span>Air conditioning</span></div>
                <div><i class="fa-solid fa-paw"></i><span>Pet friendly</span></div>
-           </div>
-       </div>
+               </div>
+               </div>
        <div id="google-map-mini">
-           <div class="map">
-               <iframe
-                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47544.037529784255!2d72.83169105113112!3d19.064280060402854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1671187344702!5m2!1sen!2sin"
-                   width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+       <div class="map">
+       <iframe
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47544.037529784255!2d72.83169105113112!3d19.064280060402854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1671187344702!5m2!1sen!2sin"
+       width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-           </div>
+                   </div>
            <div id="explore-area">
-               <h3>Explore the area</h3>
+           <h3>Explore the area</h3>
                <div>
                    <div><i class="fa-solid fa-location-dot"></i><span>Miramar Beach</span></div>
                    <div><span class="walk">20 min walk</span></div>
                </div>
                <div>
-                   <div> <i class="fa-solid fa-location-dot"></i><span>Campal Gardens</span></div>
-                   <div><span class="walk">30 min walk</span></div>
+               <div> <i class="fa-solid fa-location-dot"></i><span>Campal Gardens</span></div>
+               <div><span class="walk">30 min walk</span></div>
                </div>
                <div>
-                   <div> <i class="fa-solid fa-location-dot"></i><span>Reis Magos Fort</span></div>
+               <div> <i class="fa-solid fa-location-dot"></i><span>Reis Magos Fort</span></div>
                    <div><span class="walk">15 min walk</span></div>
-               </div>
+                   </div>
                <div>
-                   <div> <i class="fa-solid fa-plane-departure"></i><span>Goa (GOI-Dabolim)</span>
+               <div> <i class="fa-solid fa-plane-departure"></i><span>Goa (GOI-Dabolim)</span>
                    </div>
                    <div> <span class="walk">30 min walk</span></div>
-               </div>
-           </div>
-       </div>
+                   </div>
+                   </div>
+                   </div>
    </div>`
-    return {
+   return {
 
        data1:` ${hotelImgsection.innerHTML=hotelData}`,
        data2: `${hotelDetails.innerHTML=hotelDetailsData}`
     }
 }
 
-function renderRoompage(roomoutput){
+let reserve_btn=document.getElementById("resserve-button");
+reserve_btn.addEventListener("click", reserveFunction);
+function reserveFunction(){
+    let otp=prompt("Please enter the OTP for reservation");{
+        if(otp==1234){
+            alert("Reservation Successful")
+        }else{
+            alert("Wrong OTP Try Again")
+        }
+    }
+}
 
-let roomData= roomoutput.map((item)=>{
+
+
+
+
+
+let total_days=sessionStorage.getItem("total-days")
+
+let roomSection=document.getElementById("room-div");
+let check_btn=document.getElementById("click-check-btn");
+check_btn.addEventListener("click",checkfunction)
+function checkfunction(){
+    let checkin = document.getElementById("chekIn").value;
+        let checkout = document.getElementById("checkOut").value;
+        let dateOne = new Date(checkin);
+        let dateTwo = new Date(checkout);
+        let time = Math.abs(dateTwo - dateOne);
+       let days = Math.ceil(time / (1000 * 60 * 60 * 24));
+       if (days == 0) { days = 1 }
+        sessionStorage.setItem("total-days", days);
+        console.log(days)
+     total_days=sessionStorage.getItem("total-days")
+
+        renderRoompage(roomArr)
+        //  let price= document.getElementById("price");
+        //  price.innerText="";
+    }
+    function renderRoompage(roomArr){
+
+         roomSection.innerHTML="";
+        let roomData= roomArr.map((item)=>{
+            // let a=10;
+            // let total_price=item["option-price-1"]*total_days;
+    // console.log(total_price)
     return `<div class="room-child-div">
     <div class="room-child-div-img">
-        <img src="${item["hotel-room-image-media src-2"]}"
+    <img src="${item["hotel-room-image-media src-2"]}"
             alt="roomimg-1">
     </div>
     <div class="room-child-div-details">
@@ -147,25 +194,25 @@ let roomData= roomoutput.map((item)=>{
         </div>
         <div>
             <p>${item.rating}</p>
-        </div>
+            </div>
         <div class="room-heilights">
-            <div><i class="fa-solid fa-box"></i></div>
+        <div><i class="fa-solid fa-box"></i></div>
             <div>
-                <p class="sq-ft">${item["room-size"]}</p>
+            <p class="sq-ft">${item["room-size"]}</p>
             </div>
         </div>
         <div class="room-heilights">
             <div> <i class="fa-solid fa-user-group"></i></div>
             <div>
-                <p class="total-capacity">${item["total-people"]} </p>
+            <p class="total-capacity">${item["total-people"]} </p>
             </div>
-        </div>
-        <div class="room-heilights">
+            </div>
+            <div class="room-heilights">
             <div> <i class="fa-solid fa-bed"></i></div>
             <div>
                 <p class="total-bed">${item["beds"]}</p>
             </div>
-        </div>
+            </div>
         <div class="room-heilights">
             <div> <i class="fa-sharp fa-solid fa-wifi"></i></div>
             <div>
@@ -224,9 +271,8 @@ let roomData= roomoutput.map((item)=>{
             <div><p>+$${item["option-price-4-4"]}</p></div>
         </div>
         <div class="room-price">
-            <h1>$${item["option-price-1"]}</h1>
+            <h1 id="price">$${item["option-price-1"]*total_days}</h1>
             <div>
-
                 <div>
                     <p>$381 total</p>
                     <p>includes taxes & fees</p>
@@ -234,7 +280,7 @@ let roomData= roomoutput.map((item)=>{
                 </div>
                 <div>
                     <p>We have 5 left</p>
-                    <button>Reserve</button>
+                    <button class="room-reserve-btn">Reserve</button>
                 </div>
             </div>
         </div>
@@ -244,14 +290,141 @@ let roomData= roomoutput.map((item)=>{
 // let input2;
 // let input3;
 // let input4;
-   let fetchedData= roomSection.innerHTML=roomData.join(" ");
-   return fetchedData;
+  roomSection.innerHTML=roomData.join(" ");
+//    return fetchedData;
+let rooomReserve=document.querySelectorAll(".room-reserve-btn");
+for(let btn of rooomReserve){
+    btn.addEventListener("click",btnfunction)
+   function btnfunction(){
+    let otp=prompt("Please enter the OTP for reservation");{
+        if(otp==1234){
+            alert("Reservation Successful")
+        }else{
+            alert("Wrong OTP Try Again")
+        }
+    }
+   }
+}
 }
 
+let alsoLikearr=[]
+async function alsoLikehotels(){
+    try {
+        let alsoLike_res= await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotels?city=${city}`)
+        if(alsoLike_res.ok){
+            let output= await alsoLike_res.json();
+            // alsoLikearr=[...output]
+            for(let i=2;i<5;i++){
+                alsoLikearr.push(output[i])
+                alsoLike(alsoLikearr)
+            }
+            // console.log(alsoLikearr)
+        }
+        else{
+            alert("oops")
+        }
+    } catch (error) {
+        alert(`Something wrong ${error}`)
+    }
+}
+alsoLikehotels()
+// alsoLike(alsoLikearr)
+let alsoLikeDiv=document.getElementById("also-like-hotel-div");
+function alsoLike(alsoLikearr){
+    let data=alsoLikearr.map((item)=>{
+        return `<div class="also-like-hotel-div">
+        <div><img
+                src="${item["hotel-image-media src-1"]}"
+                alt="alsolike-img">
+        </div>
+        <div>
+            <h2>${item["hotel-name"]}</h2>
+            <p>Chapora</p>
+            <i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span>
+            <p>Fully refundable</p>
+            <p>Reserve now, pay later</p>
+            <div>
+            
+            <div>
+                    <p><i class="fa-solid fa-money-bill"></i>Earn $6.19 Orbucks</p>
+                    <p>${item["reviews"]}</p>
+                    </div>
+                <div>
+                    <h1> $${item["hotel-price"]}</h1>
+                    <p>$${item["total-price"]} total</p>
+                    <p>includes taxes</p>
+                    <p> & fees</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>`;
+    });
+
+ let fetchdata=alsoLikeDiv.innerHTML=data.join(" ");
+ return fetchdata;
+}
 let save= document.getElementById("save-button");
 save.addEventListener("click", bookmarks)
 async function bookmarks(){
-try {
+
+    // let arr=[]
+    // let book_res= await fetch(`https://639ad40131877e43d677b046.mockapi.io/bookmarks?userId=${4}`);
+//     if(book_res.ok){
+//     let output=await book_res.json();
+//     console.log(output[0].bookmark)
+//     let id=output[0].id;
+//     console.log(id)
+// arr.push(output[0].bookmark[0])
+// arr.push(obj)
+// console.log(arr)
+// let obj_1={
+//     "bookmark":arr
+// }
+//     let book= await fetch(`https://639ad40131877e43d677b046.mockapi.io/bookmarks/${id}`,{
+//         method:"PUT",
+//         headers:{
+//             "Content-Type":"application/json"
+//         },
+//         body:JSON.stringify(obj_1)
+//     });
+// if(book.ok){
+//     alert("done")
+// }
+
+//     }
+    // console.log(book_res.json())
+    // let output=await book_res.json();
+    // for(let i=0;i<output.length;i++){
+    //     if(output[i].userId==4){
+    //         let boookmarkRes= await fetch("https://639ad40131877e43d677b046.mockapi.io/bookmarks",{
+    //     method:"POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //       },
+    //     body:JSON.stringify(obj)
+    // })
+    // if(boookmarkRes.ok){
+    //     alert("Hurry, Hotel added to your trip");
+    //     // window.location.href = "#tologin";
+    // }else{
+    //     alert("Bad request has been made.");
+    // }
+    //         break;
+    //     }else{
+    //         console.log("Data not avali")
+    //     }
+    // }
+//     if(book_res.ok){
+
+//     }
+//    else{
+//         alert("................................")
+//     }
+
+
+try{
+
     let obj={
         "userId":userId,
         "bookmark":bookmarksData
