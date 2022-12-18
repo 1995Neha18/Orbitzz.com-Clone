@@ -1,101 +1,108 @@
-
-
+let bookArr=[]
 async function fetchBooking(){
     
     try {
-        let fetchHotels= await fetch("https://639ad40131877e43d677b046.mockapi.io/bookmarks",{
-            method:"GET",
-            headers:{
-                "Content-Type":"application/json",
-                
-            }
-        });
+        let fetchHotels= await fetch("https://639ad40131877e43d677b046.mockapi.io/bookmarks");
 
-        if(fetchHotels.ok===true){
+        if(fetchHotels.ok){
             
             let fetchData= await fetchHotels.json();
-            console.log(fetchData)
+            // console.log(fetchData)
+            bookArr=[...fetchData]
+            console.log(bookArr)
             renderHotels(fetchData);
         }
         else{
             alert("unsuccessful for fetching bookmarks")
         }
     } catch (error) {
-        // alert("Bad Request")
+        alert("Bad Request")
+        console.log(error)
     }
 }
 
 fetchBooking();
+
 let bookmarkdiv= document.getElementById("main-container")
-function renderHotels(data){
-   let bookmarkData= data.map((el)=>{
-        
-        return `<div class="container">
-        <img src="${el["bookmark"].map((item)=>{
-            return item["hotel-image-media src-3"]
-        })}" alt="">
-         <h1 id="name"> Hotel_Name: ${el["bookmark"].map((item)=>{
-            
-            return item["hotel-name"]
-        })} </h1>
-            <h6> City: ${el["bookmark"].map((item)=>{
-                
-                return item["city"]
-            })}</h6>
-           <h4 id="rating">Rating: ${el["bookmark"].map((item)=>{
-            
-            return item["rating"]
-        })}</h4>
-           <h2 id="entities">Popular Entities</h2>
-           <div class="mini-fe">
-              <div>
-                  <div>
-                      <i class="fa-solid fa-hot-tub-person"></i> <span>Hot Tub</span>
-                  </div>
-                  <div><i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span></div>
-                  <div><i class="fa-solid fa-spa"></i><span>Spa</span></div>
-                  <!-- <div><span class="reviews">See all amenities &#8594;</span></div> -->
-              </div>
-              <div>
-                  <div><i class="fa-sharp fa-solid fa-wifi"></i><span>Free Wifi</span></div>
-                  <div><i class="fa-solid fa-snowflake"></i><span>Air conditioning</span></div>
-                  <div><i class="fa-solid fa-paw"></i><span>Pet friendly</span></div>
-              </div>
-          </div>
-         <h2 id="price"> Total-Price: Rs ${el["bookmark"].map((item)=>{
-            
-            return item["total-price"]
-        })}</h2>
-         <div>
-            
-            <button onClick="deltrequest(this)" id="dltbtn" class="btn_Remove">Remove</button>
-         </div>
+
+function renderHotels(fetchData){
+bookmarkdiv.innerHTML=""
+    fetchData.forEach((elem) => {
+        let bookmark_child_div=document.createElement("div")
+        let img_div=document.createElement("div");
+        let img=document.createElement("img")
+        img.setAttribute("src",elem["hotel-image-media src-1"]);
+        img_div.append(img);
+
+        let details_div=document.createElement("div");
+        let hotel_name=document.createElement("h2");
+        hotel_name.innerText=elem["hotel-name"];
+        let reating=document.createElement("p");
+        reating.innerText=elem["reviews"];
+        let entities=document.createElement("p");
+        entities.innerText="Popular Entities";
+
+        let logo_div=document.createElement("div");
+        logo_div.innerHTML=`<div class="mini-fe">
+        <div>
+            <i class="fa-solid fa-hot-tub-person"></i> <span>Hot Tub</span>
+        </div>
+        <div><i class="fa-sharp fa-solid fa-person-swimming"></i><span>Pool</span></div>
+        <div><i class="fa-solid fa-spa"></i><span>Spa</span></div>
+
+        <div><i class="fa-sharp fa-solid fa-wifi"></i><span>Free Wifi</span></div>
+        <div><i class="fa-solid fa-snowflake"></i><span>Air conditioning</span></div>
+        <div><i class="fa-solid fa-paw"></i><span>Pet friendly</span></div>
     </div>`
-    })
-    
-   let bookdata= bookmarkdiv.innerHTML=bookmarkData;
-   return bookdata;
+
+        let price=document.createElement("h2");
+        price.innerText=`$${elem["hotel-price"]}/day`;
+
+        let btn_div=document.createElement("div");
+        let reserve_btn=document.createElement("button");
+        reserve_btn.innerText="Reserve"
+        reserve_btn.addEventListener("click", reserveFunction)
+        function reserveFunction(){
+            let otp=prompt("Please enter the OTP for reservation");
+                    if(otp==1234){
+                        alert("Reservation Successful")
+                    }else{
+                        alert("Wrong OTP Try Again")
+                    }
+        }
+        let remove_btn=document.createElement("button");
+        remove_btn.innerText="Remove"
+        remove_btn.addEventListener("click",removeFunction)
+        function removeFunction(){
+            let id= elem.id;
+            console.log(id)
+            deletefunction(id)
+        }
+        btn_div.append(reserve_btn,remove_btn);
+        details_div.append(hotel_name,reating,entities,logo_div,price,btn_div);
+        bookmark_child_div.append(img_div,details_div)
+        bookmarkdiv.append(bookmark_child_div)
+    });
 }
 
-// let dlt=(el)=>{
-//     el.parentNode.parentNode.remove();
-// }
-
-   async function deltrequest(){
-    
+async function deletefunction(id){
     try {
-        let dltbookmark= await fetch(`https://639ad40131877e43d677b046.mockapi.io/bookmarks`,{
-            method:"DELETE",
-            headers:{
-                "Content-Type":"application.json",
-            },
+        let res= await fetch(`https://639ad40131877e43d677b046.mockapi.io/bookmarks/${id}`,{
+            method : "DELETE",
+            headers : {
+                "Content-Type": "application/json"
+            }
+        })
+        if(res.ok){
 
-        });
-        
-        // if(dltbookmark.ok===true){
-        //     let dltItem= await dltbookmark.json()
-        // }
+            // console.log(bookArr)
+            fetchBooking()
+            // window.addEventListener(())
+        }else{
+            alert("Check before delete")
+        }
     } catch (error) {
-        alert("can't able to remove")
+        alert(error)
+        
     }
-   }
+}
