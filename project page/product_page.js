@@ -1,42 +1,44 @@
-let bookmarksData=[]
-let obj={}
-let mainsection= document.getElementById("main");
-let hotelImgsection= document.getElementById("hotel-img")
-let hotelDetails=document.getElementById("hotel-details");
-let hotelid=sessionStorage.getItem("hotelid");
-let userID=sessionStorage.getItem("userid");
-let city=sessionStorage.getItem("city");
-async function hotelPage(){
-    try{
-        let res= await fetch (`https://639ad40131877e43d677b046.mockapi.io/hotels/${hotelid}`);
-        if(res.ok==true){
-            let output= await res.json()
-            bookmarksData=[output];
-            obj=output;
-            console.log(obj)
+let bookmarksData = []
+let obj = {}
+let mainsection = document.getElementById("main");
+let hotelImgsection = document.getElementById("hotel-img")
+let hotelDetails = document.getElementById("hotel-details");
+let hotelid = sessionStorage.getItem("hotelid");
+let userID = sessionStorage.getItem("userid");
+let city = sessionStorage.getItem("city");
+// console.log(hotelid)
+hotelPage()
+async function hotelPage() {
+    try {
+        let res = await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotels/${hotelid}`);
+        if (res.ok == true) {
+            let output = await res.json()
+            bookmarksData = [output];
+            // obj=output;
+            // console.log(obj)
+            // console.log(hotelid)
             sessionStorage.setItem("city", output.city);
             renderProductpage(output)
             // console.log(bookmarksData)
             // console.log(output["hotel-image-media src-1"])
-            
-        }else{
+
+        } else {
             alert("Bad request! Maybe you are missing your access token.")
         }
     }
-    catch(err){
+    catch (err) {
         alert(`${err} happend`)
     }
 }
-hotelPage()
-let roomArr=[]
-async function hotelroomPage(){
+let roomArr = []
+async function hotelroomPage() {
     try {
-        let roomRes= await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotel-rooms`);
-        if(roomRes.ok){
-            let roomoutput= await roomRes.json();
-            roomArr=[...roomoutput]
+        let roomRes = await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotel-rooms`);
+        if (roomRes.ok) {
+            let roomoutput = await roomRes.json();
+            roomArr = [...roomoutput]
             renderRoompage(roomArr)
-        }else{
+        } else {
             alert("Please try later")
         }
         // console.log(roomoutput);
@@ -48,7 +50,7 @@ hotelroomPage()
 
 function renderProductpage(output) {
     //     // mainsection.innerHTML="";
-        let hotelData= `
+    let hotelData = `
         <div class="img-left">
         <img src="${output["hotel-image-media src-1"]}"
                 alt="Img-1">
@@ -67,7 +69,7 @@ function renderProductpage(output) {
                     src="https://images.trvl-media.com/hotels/1000000/470000/465100/465005/60f296fc.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
                     alt=""></div>
         </div>`
-        let hotelDetailsData=`<div id="hotel-details-details">
+    let hotelDetailsData = `<div id="hotel-details-details">
     <div>
     <div>
     <h1>${output["hotel-name"]}</h1>
@@ -131,20 +133,20 @@ function renderProductpage(output) {
                    </div>
                    </div>
    </div>`
-   return {
+    return {
 
-       data1:` ${hotelImgsection.innerHTML=hotelData}`,
-       data2: `${hotelDetails.innerHTML=hotelDetailsData}`
+        data1: ` ${hotelImgsection.innerHTML = hotelData}`,
+        data2: `${hotelDetails.innerHTML = hotelDetailsData}`
     }
 }
 
-let reserve_btn=document.getElementById("resserve-button");
+let reserve_btn = document.getElementById("resserve-button");
 reserve_btn.addEventListener("click", reserveFunction);
-function reserveFunction(){
-    let otp=prompt("Please enter the OTP for reservation");{
-        if(otp==1234){
+function reserveFunction() {
+    let otp = prompt("Please enter the OTP for reservation"); {
+        if (otp == 1234) {
             alert("Reservation Successful")
-        }else{
+        } else {
             alert("Wrong OTP Try Again")
         }
     }
@@ -155,35 +157,36 @@ function reserveFunction(){
 
 
 
-let total_days=sessionStorage.getItem("total-days")
+let total_days;
 
-let roomSection=document.getElementById("room-div");
-let check_btn=document.getElementById("click-check-btn");
-check_btn.addEventListener("click",checkfunction)
-function checkfunction(){
+let roomSection = document.getElementById("room-div");
+let check_btn = document.getElementById("click-check-btn");
+check_btn.addEventListener("click", checkfunction)
+function checkfunction() {
     let checkin = document.getElementById("chekIn").value;
-        let checkout = document.getElementById("checkOut").value;
-        let dateOne = new Date(checkin);
-        let dateTwo = new Date(checkout);
-        let time = Math.abs(dateTwo - dateOne);
-       let days = Math.ceil(time / (1000 * 60 * 60 * 24));
-       if (days == 0) { days = 1 }
-        sessionStorage.setItem("total-days", days);
-        console.log(days)
-     total_days=sessionStorage.getItem("total-days")
+    let checkout = document.getElementById("checkOut").value;
+    let dateOne = new Date(checkin);
+    let dateTwo = new Date(checkout);
+    let time = Math.abs(dateTwo - dateOne);
+    let days = Math.ceil(time / (1000 * 60 * 60 * 24));
+    if (days == 0) {
+        days = 1;
 
-        renderRoompage(roomArr)
-        //  let price= document.getElementById("price");
-        //  price.innerText="";
     }
-    function renderRoompage(roomArr){
+    sessionStorage.setItem("total-days", days);
+    total_days = sessionStorage.getItem("total-days")
 
-         roomSection.innerHTML="";
-        let roomData= roomArr.map((item)=>{
-            // let a=10;
-            // let total_price=item["option-price-1"]*total_days;
-    // console.log(total_price)
-    return `<div class="room-child-div">
+    renderRoompage(roomArr, total_days)
+
+}
+function renderRoompage(roomArr, total_days) {
+
+    roomSection.innerHTML = "";
+    let roomData = roomArr.map((item) => {
+        // let a=10;
+        // let total_price=item["option-price-1"]*total_days;
+        // console.log(total_price)
+        return `<div class="room-child-div">
     <div class="room-child-div-img">
     <img src="${item["hotel-room-image-media src-2"]}"
             alt="roomimg-1">
@@ -271,10 +274,10 @@ function checkfunction(){
             <div><p>+$${item["option-price-4-4"]}</p></div>
         </div>
         <div class="room-price">
-            <h1 id="price">$${item["option-price-1"]*total_days}</h1>
+            <h1 id="price">$${item["option-price-1"] * total_days || item["option-price-1"] * 1}</h1>
             <div>
                 <div>
-                    <p>$381 total</p>
+                    <p>$${(item["option-price-1"] * total_days || item["option-price-1"] * 1)+50} total</p>
                     <p>includes taxes & fees</p>
                     <h4>Price details ></h4>
                 </div>
@@ -286,41 +289,36 @@ function checkfunction(){
         </div>
     </div>
 </div>`
-})
-// let input2;
-// let input3;
-// let input4;
-  roomSection.innerHTML=roomData.join(" ");
-//    return fetchedData;
-let rooomReserve=document.querySelectorAll(".room-reserve-btn");
-for(let btn of rooomReserve){
-    btn.addEventListener("click",btnfunction)
-   function btnfunction(){
-    let otp=prompt("Please enter the OTP for reservation");{
-        if(otp==1234){
-            alert("Reservation Successful")
-        }else{
-            alert("Wrong OTP Try Again")
+    })
+
+    roomSection.innerHTML = roomData.join(" ");
+    let rooomReserve = document.querySelectorAll(".room-reserve-btn");
+    for (let btn of rooomReserve) {
+        btn.addEventListener("click", btnfunction)
+        function btnfunction() {
+            let otp = prompt("Please enter the OTP for reservation"); {
+                if (otp == 1234) {
+                    alert("Reservation Successful")
+                } else {
+                    alert("Wrong OTP Try Again")
+                }
+            }
         }
     }
-   }
-}
 }
 
-let alsoLikearr=[]
-async function alsoLikehotels(){
+let alsoLikearr = []
+async function alsoLikehotels() {
     try {
-        let alsoLike_res= await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotels?city=${city}`)
-        if(alsoLike_res.ok){
-            let output= await alsoLike_res.json();
-            // alsoLikearr=[...output]
-            for(let i=2;i<5;i++){
+        let alsoLike_res = await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotels?city=${city}`)
+        if (alsoLike_res.ok) {
+            let output = await alsoLike_res.json();
+            for (let i = 0; i < 3; i++) {
                 alsoLikearr.push(output[i])
                 alsoLike(alsoLikearr)
             }
-            // console.log(alsoLikearr)
         }
-        else{
+        else {
             alert("oops")
         }
     } catch (error) {
@@ -328,10 +326,9 @@ async function alsoLikehotels(){
     }
 }
 alsoLikehotels()
-// alsoLike(alsoLikearr)
-let alsoLikeDiv=document.getElementById("also-like-hotel-div");
-function alsoLike(alsoLikearr){
-    let data=alsoLikearr.map((item)=>{
+let alsoLikeDiv = document.getElementById("also-like-hotel-div");
+function alsoLike(alsoLikearr) {
+    let data = alsoLikearr.map((item) => {
         return `<div class="also-like-hotel-div">
         <div><img
                 src="${item["hotel-image-media src-1"]}"
@@ -361,89 +358,39 @@ function alsoLike(alsoLikearr){
     </div>`;
     });
 
- let fetchdata=alsoLikeDiv.innerHTML=data.join(" ");
- return fetchdata;
+    let fetchdata = alsoLikeDiv.innerHTML = data.join(" ");
+    return fetchdata;
 }
-let save= document.getElementById("save-button");
+let save = document.getElementById("save-button");
 save.addEventListener("click", bookmarks)
-async function bookmarks(){
-
-    // let arr=[]
-    // let book_res= await fetch(`https://639ad40131877e43d677b046.mockapi.io/bookmarks?userId=${4}`);
-//     if(book_res.ok){
-//     let output=await book_res.json();
-//     console.log(output[0].bookmark)
-//     let id=output[0].id;
-//     console.log(id)
-// arr.push(output[0].bookmark[0])
-// arr.push(obj)
-// console.log(arr)
-// let obj_1={
-//     "bookmark":arr
-// }
-//     let book= await fetch(`https://639ad40131877e43d677b046.mockapi.io/bookmarks/${id}`,{
-//         method:"PUT",
-//         headers:{
-//             "Content-Type":"application/json"
-//         },
-//         body:JSON.stringify(obj_1)
-//     });
-// if(book.ok){
-//     alert("done")
-// }
-
-//     }
-    // console.log(book_res.json())
-    // let output=await book_res.json();
-    // for(let i=0;i<output.length;i++){
-    //     if(output[i].userId==4){
-    //         let boookmarkRes= await fetch("https://639ad40131877e43d677b046.mockapi.io/bookmarks",{
-    //     method:"POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //       },
-    //     body:JSON.stringify(obj)
-    // })
-    // if(boookmarkRes.ok){
-    //     alert("Hurry, Hotel added to your trip");
-    //     // window.location.href = "#tologin";
-    // }else{
-    //     alert("Bad request has been made.");
-    // }
-    //         break;
-    //     }else{
-    //         console.log("Data not avali")
-    //     }
-    // }
-//     if(book_res.ok){
-
-//     }
-//    else{
-//         alert("................................")
-//     }
+async function bookmarks() {
 
 
-try{
+    try {
 
-    let obj={
-        "userId":userId,
-        "bookmark":bookmarksData
-    }
-    console.log(obj)
-     let boookmarkRes= await fetch("https://639ad40131877e43d677b046.mockapi.io/bookmarks",{
-        method:"POST",
+        let obj = {
+            "userId": userID,
+            "hotel-image-media src-1": bookmarksData[0]["hotel-image-media src-1"],
+            "hotel-image-media src-2": bookmarksData[0]["hotel-image-media src-2"],
+            "hotel-image-media src-3": bookmarksData[0]["hotel-image-media src-3"],
+            "hotel-name": bookmarksData[0]["hotel-name"],
+            "reviews": bookmarksData[0]["reviews"],
+            "hotel-price": bookmarksData[0]["hotel-price"]
+        }
+        console.log(obj)
+        let boookmarkRes = await fetch("https://639ad40131877e43d677b046.mockapi.io/bookmarks", {
+            method: "POST",
             headers: {
-                "Content-Type": "application/json",
-          },
-        body:JSON.stringify(obj)
-    })
-    if(boookmarkRes.ok){
-        alert("Hurry, Hotel added to your trip");
-        // window.location.href = "#tologin";
-    }else{
-        alert("Bad request has been made.");
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        })
+        if (boookmarkRes.ok) {
+            alert("Hurry, Hotel added to your trip");
+        } else {
+            alert("Bad request has been made.");
+        }
+    } catch (error) {
+        alert("Data not fetch properly")
     }
-} catch (error) {
-    alert("Data not fetch properly")
-}
 }
