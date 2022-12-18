@@ -1,3 +1,18 @@
+let trips = document.getElementById("trips");
+trips.addEventListener("click", () => {
+    console.log("yes");
+    window.open("Bookmark.html", "_self");
+})
+let signin = document.getElementById("signin");
+signin.addEventListener("click", () => {
+    console.log("yes");
+    window.open("LogIn.html", "_self");
+})
+
+let logo = document.querySelector("#left-section");
+logo.addEventListener("click", () => {
+    window.open("index.html", "_self");
+})
 let searcg_btn = document.querySelector("#searchbtn");
 
 searcg_btn.addEventListener("click", async() => {

@@ -30,6 +30,10 @@ body {
     font-weight: 600;
 }
 
+#left-section:hover {
+    cursor: pointer;
+}
+
 #right-section {
     width: 35%;
     display: flex;
@@ -85,11 +89,12 @@ body {
 }
 
 #displayArea>div img {
-    height: 180px;
-    width: 200px;
+    height: 230px;
+    width: 250px;
 }
 
 #displayArea>div {
+    padding: 10px;
     position: relative;
     display: flex;
     margin-bottom: 20px;
@@ -97,12 +102,12 @@ body {
 }
 
 #displayArea>div:hover {
-    background-color: antiquewhite;
+    background-color: rgb(206, 206, 234);
 }
 
 #displayArea>div>div p,
 h3 {
-    margin-top: 0px;
+    margin-top: 8px;
     margin-bottom: 0px;
 }
 
@@ -136,18 +141,64 @@ h3 {
 #searchbyid {
     display: flex;
     flex-direction: column;
+    width: 40%;
     margin: auto;
     text-align: center;
-    width: 50%;
-    padding: 50px;
+    padding: 10px;
     background-color: #08253C;
-    border-radius: 5px;
+    border-radius: 10px;
+    height: 200px;
+    justify-content: space-evenly;
 }
 
-#searchbyid label input button {
-    padding: 20px;
-    margin: 10px;
+#searchbyid input {
+    height: 40px;
     border-radius: 10px;
-    font-size: large;
-    color: #08253C;
+}
+
+#searchbyid button {
+    margin-top: 10px;
+    height: 50px;
+    background-color: #08253C;
+    color: white;
+    border-radius: 20px;
+}
+
+#searchbyid label {
+    font-size: 30px;
+}
+
+i {
+    margin-right: 20px;
+}
+
+#addnewproperty {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #08253C;
+    border-radius: 10px;
+    height: 500px;
+    justify-content: space-evenly;
+}
+
+#addnewproperty input {
+    padding: 5px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+#addnewproperty button {
+    margin-top: 10px;
+    height: 50px;
+    background-color: #08253C;
+    color: white;
+    border-radius: 20px;
+}
+
+#addnewproperty label {
+    font-size: 20px;
 }

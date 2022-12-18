@@ -3,7 +3,16 @@ logo.addEventListener("click", () => {
     window.open("index.html", "_self");
 })
 
-
+let trips = document.getElementById("trips");
+trips.addEventListener("click", () => {
+    console.log("yes");
+    window.open("Bookmark.html", "_self");
+})
+let signin = document.getElementById("signin");
+signin.addEventListener("click", () => {
+    console.log("yes");
+    window.open("LogIn.html", "_self");
+})
 
 let cont = document.querySelector("#searchedProperty")
 let hotelarr = JSON.parse(sessionStorage.getItem("hotel")) || [];
