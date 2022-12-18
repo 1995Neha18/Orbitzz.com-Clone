@@ -13,6 +13,47 @@ body
     padding: 0;  
     font-family: 'Arial';  
 }  
+#header {
+    height: 70px;
+    width: 100%;
+    background-color: #08253C;
+    color: white;
+    /* position: sticky;
+    top: 0; */
+}
+
+#navbar {
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#left-section {
+    font-size: x-large;
+    font-weight: 600;
+}
+#left-section a{
+    font-size: x-large;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#right-section {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#right-section a {
+    background-color: #08253C;
+    color: white;
+    border: 0;
+    font-weight: 600;
+    margin-left: -44px;
+}
 .signin{  
         width: 382px;  
         overflow: hidden;  
@@ -114,16 +155,18 @@ img#logo {
     </style>
 </head>
 <body>
-   <!-- nav -->
-   <div class="nav">
-       <!-- <div class="n1">
-           <a href="https://www.freeiconspng.com/img/1156" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/arrow-left-icons-free-icons-in-2d--icon-search-engine--5.png" width="50" alt="Windows For Arrow Icons" /></a>
-    </div> -->
-<div class="n1">
-    <img id="logo" src="http://127.0.0.1:5500/likely-secretary-3214/Images/Teamlogo1.png" alt="" >
-</div>
-</div>
-
+    <div id="header">
+        <div id="navbar">
+            <div id="left-section"><a href="/index.html">StayCation.com</a> </div>
+            <div id="right-section">
+                <a href="#">Espanol</a> 
+                <a href="#">List your property</a>
+                <a href="#">Support</a></button>
+                <a href="/Bookmark.html">Trips</a>
+                <a href="/logIn.html">Signin</a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -210,9 +253,7 @@ sam.addEventListener("submit",(e)=>{
     obj[all_in[i].id] = all_in[i].value
 
 }
-alert("congratulation you registered successfully")
-window.location.href ="logIn.html"
-console.log(obj,"obj ---")
+
 
 new_user(obj);
 
@@ -229,7 +270,12 @@ async function new_user(obj){
  },
  body : JSON.stringify(obj)
 }) 
-console.log(user_req,"data")
+// console.log(user_req,"data")
+if(user_req.ok){
+    alert("congratulation you registered successfully")
+window.location.href ="logIn.html"
+console.log(obj,"obj ---")
+}
 
 }
 
