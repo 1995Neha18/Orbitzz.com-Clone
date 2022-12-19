@@ -1,165 +1,181 @@
 <!-- prayas -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up page</title>
     <style>
-body  
-{  
-    margin: 0;  
-    padding: 0;  
-    font-family: 'Arial';  
-}  
-#header {
-    height: 70px;
-    width: 100%;
-    background-color: #08253C;
-    color: white;
-    /* position: sticky;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial';
+        }
+
+        #header {
+            height: 70px;
+            width: 100%;
+            background-color: #08253C;
+            color: white;
+            /* position: sticky;
     top: 0; */
-}
+        }
 
-#navbar {
-    height: 100%;
-    width: 70%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+        #navbar {
+            height: 100%;
+            width: 70%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-#left-section {
-    font-size: x-large;
-    font-weight: 600;
-}
-#left-section a{
-    font-size: x-large;
-    font-weight: 600;
-    color: #ffffff;
-}
+        #left-section {
+            font-size: x-large;
+            font-weight: 600;
+        }
 
-#right-section {
-    width: 35%;
-    display: flex;
-    justify-content: space-between;
-}
+        #left-section a {
+            font-size: x-large;
+            font-weight: 600;
+            color: #ffffff;
+        }
 
-#right-section a {
-    background-color: #08253C;
-    color: white;
-    border: 0;
-    font-weight: 600;
-    margin-left: -44px;
-}
-.signin{  
-        width: 382px;  
-        overflow: hidden;  
-        margin: auto;  
-        margin: 20 0 0 450px;  
-        padding: 80px;
-     
-}  
+        #right-section {
+            width: 35%;
+            display: flex;
+            justify-content: space-between;
+        }
 
-#Uname{  
-    width: 100%;  
-    height: 50px;  
-    border: none;  
-    border-radius: 3px;  
-    border: 2px solid;
-    padding-left: 8px;  
-}  
-.Pass{  
-    width: 100%;  
-    height: 50px;  
-    border: none;  
-    border-radius: 3px;
-    border: 2px solid;  
-    padding-left: 8px;  
-      
-}  
-#log{  
-    width: 100%;  
-    height: 50px; 
-    border: none;  
-    /* border-radius: 17px;   */
-    padding-left: 7px;  
-    color: white;  
-    background-color: #C83259;
-cursor: pointer;
-  
-  
-}  
-span{  
-    color: #616161 ;
-    font-size: 15px;  
-}  
-a{  
-padding-bottom:10px ;
-}  
+        #right-section a {
+            background-color: #08253C;
+            color: white;
+            border: 0;
+            font-weight: 600;
+            margin-left: -44px;
+        }
 
-div#para1 {
-    font-size: 0.75rem;
-    text-align: left;
-    color: #616161;
-}
-div#para2 {
-    font-size: 0.75rem;
-    text-align: left;
-    color: #616161;
-}
-div#para3 {
-    font-size: 0.75rem;
-    text-align: center;
-    color: #616161;
-}
-div#para4 {
-    font-size: 0.75rem;
-    text-align: center;
-    color: #616161;
-}
-div#forgot {
-    text-align: center;
-}
-#social{
+        .signin {
+            width: 382px;
+            overflow: hidden;
+            margin: auto;
+            margin: 20 0 0 450px;
+            padding: 80px;
 
-    text-align: center;
-}
-#social img {
-    width: 9%;
-    padding: 10px;
-    cursor: pointer;
-    
-}
+        }
+
+        #Uname {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 3px;
+            border: 2px solid;
+            padding-left: 8px;
+        }
+
+        .Pass {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 3px;
+            border: 2px solid;
+            padding-left: 8px;
+
+        }
+
+        #log {
+            width: 100%;
+            height: 50px;
+            border: none;
+            /* border-radius: 17px;   */
+            padding-left: 7px;
+            color: white;
+            background-color: #C83259;
+            cursor: pointer;
 
 
-img#logo {
-    width: 15%;
-}
-.nav {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-    background: #00253c;
-}
-.n1 {
-    width: 45%;
-    margin: auto;
-    text-align: center;
-}
+        }
+
+        span {
+            color: #616161;
+            font-size: 15px;
+        }
+
+        a {
+            padding-bottom: 10px;
+        }
+
+        div#para1 {
+            font-size: 0.75rem;
+            text-align: left;
+            color: #616161;
+        }
+
+        div#para2 {
+            font-size: 0.75rem;
+            text-align: left;
+            color: #616161;
+        }
+
+        div#para3 {
+            font-size: 0.75rem;
+            text-align: center;
+            color: #616161;
+        }
+
+        div#para4 {
+            font-size: 0.75rem;
+            text-align: center;
+            color: #616161;
+        }
+
+        div#forgot {
+            text-align: center;
+        }
+
+        #social {
+
+            text-align: center;
+        }
+
+        #social img {
+            width: 9%;
+            padding: 10px;
+            cursor: pointer;
+
+        }
+
+
+        img#logo {
+            width: 15%;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+            background: #00253c;
+        }
+
+        .n1 {
+            width: 45%;
+            margin: auto;
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
     <div id="header">
         <div id="navbar">
             <div id="left-section"><a href="/index.html">StayCation.com</a> </div>
             <div id="right-section">
-                <a href="#">Espanol</a> 
+                <a href="#">Espanol</a>
                 <a href="#">List your property</a>
                 <a href="#">Support</a></button>
                 <a href="/Bookmark.html">Trips</a>
@@ -170,120 +186,122 @@ img#logo {
 
 
 
-  
-    <div class="signin">    
-        <h1>Create an account</h1><br>    
-    <form id="signin" >    
-   
- 
-     <input type="email" name="" id="username" class="Pass" required placeholder="Email address">    
-     <br><br>  
-        <input type="text" name="" id="fname" class="Pass" required placeholder="First name">    
-        <br><br>  
-          
-        <input type="text" name="" id="lname" class="Pass" required placeholder="Last name">    
-        <br><br>  
 
-        <input type="Password" name="Pass" id="password" required class="Pass" placeholder="Password">    
-        <br><br>  
-        <input type="checkbox" id="check">    
-        <span>
-Keep me signed in</span>    
-        <br><br>
-     <div id="para1">
-        Selecting this checkbox will keep you signed into your account on this device until you sign out. Do not select this on shared devices.
-     </div> 
-     <br><br>
-     <div id="para2">
-         By signing in, I agree to the Orbitz <a href="#">Terms and Conditions, Privacy Statement and Orbitz Rewards Terms and Conditions.</a>
-     </div> 
-     <br><br>
+    <div class="signin">
+        <h1>Create an account</h1><br>
+        <form id="signin">
 
-        <input  type="submit"  onsubmit="fun()" id="log"  value="Log In Here">       
-        <br><br>
 
-    <div id="para3">
-        Already have an account? <a href="logIn.html">Sign in</a>
-    </div> 
-    <br><br>
-    <div id="para4">
-        or continue with
-    <div id="social">
-        <img src="https://a.travel-assets.com/egds/marks/apple.svg" alt="">
-        <img src="https://a.travel-assets.com/egds/marks/facebook.svg" alt="">
+            <input type="email" name="" id="username" class="Pass" required placeholder="Email address">
+            <br><br>
+            <input type="text" name="" id="fname" class="Pass" required placeholder="First name">
+            <br><br>
+
+            <input type="text" name="" id="lname" class="Pass" required placeholder="Last name">
+            <br><br>
+
+            <input type="Password" name="Pass" id="password" required class="Pass" placeholder="Password">
+            <br><br>
+            <input type="checkbox" id="check">
+            <span>
+                Keep me signed in</span>
+            <br><br>
+            <div id="para1">
+                Selecting this checkbox will keep you signed into your account on this device until you sign out. Do not
+                select this on shared devices.
+            </div>
+            <br><br>
+            <div id="para2">
+                By signing in, I agree to the Orbitz <a href="#">Terms and Conditions, Privacy Statement and Orbitz
+                    Rewards Terms and Conditions.</a>
+            </div>
+            <br><br>
+
+            <input type="submit" onsubmit="fun()" id="log" value="Register">
+            <br><br>
+
+            <div id="para3">
+                Already have an account? <a href="logIn.html">Sign in</a>
+            </div>
+            <br><br>
+            <div id="para4">
+                or continue with
+                <div id="social">
+                    <img src="https://a.travel-assets.com/egds/marks/apple.svg" alt="">
+                    <img src="https://a.travel-assets.com/egds/marks/facebook.svg" alt="">
+                </div>
+
+            </div>
+        </form>
     </div>
 
-    </div> 
-</form>     
-</div>    
-   
 </body>
 <script>
     console.log("pop")
-//     let mail = document.querySelector("#mail").value ;
-//     let fname = document.querySelector("#fname")
-//     let lname = document.querySelector("#lname")
-//     let pass = document.querySelector("#Password")
-    
-// // sub.addEventListener("submit",)
+    //     let mail = document.querySelector("#mail").value ;
+    //     let fname = document.querySelector("#fname")
+    //     let lname = document.querySelector("#lname")
+    //     let pass = document.querySelector("#Password")
 
-//     function fun(e){
+    // // sub.addEventListener("submit",)
+
+    //     function fun(e){
     //         console.log("koko")
     //     }
     //     // fun()
-    
+
     //     let sub= document.querySelector("#log")
     // console.log(sub);
 
 
-// let searcg_btn = document.querySelector("#searchbtn");
-// sub.addEventListener("submit",fun);
+    // let searcg_btn = document.querySelector("#searchbtn");
+    // sub.addEventListener("submit",fun);
 
-// let destination = document.querySelector("#searchinput").value;
-let arr = []
-let sam = document.querySelector(".signin form")
-// console.log(sam)
-sam.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    // console.log(e);
-    let all_in = document.querySelectorAll(".signin input");
-    let obj = {};
-    for(i=0; i<all_in.length-1; i++){
-        // all_in.value[i] == ""
-    obj[all_in[i].id] = all_in[i].value
+    // let destination = document.querySelector("#searchinput").value;
+    let arr = []
+    let sam = document.querySelector(".signin form")
+    // console.log(sam)
+    sam.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // console.log(e);
+        let all_in = document.querySelectorAll(".signin input");
+        let obj = {};
+        for (i = 0; i < all_in.length - 1; i++) {
+            // all_in.value[i] == ""
+            obj[all_in[i].id] = all_in[i].value
 
-}
+        }
 
 
-new_user(obj);
+        new_user(obj);
 
-})
-// console.log(arr,"arr")
+    })
+    // console.log(arr,"arr")
 
-async function new_user(obj){
-    try{
- let user_req = await fetch("https://639ad40131877e43d677b046.mockapi.io/users",{  
- method : "POST",
- headers : {
-    "Content-Type" : "application/json"
+    async function new_user(obj) {
+        try {
+            let user_req = await fetch("https://639ad40131877e43d677b046.mockapi.io/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
 
- },
- body : JSON.stringify(obj)
-}) 
-// console.log(user_req,"data")
-if(user_req.ok){
-    alert("congratulation you registered successfully")
-window.location.href ="logIn.html"
-console.log(obj,"obj ---")
-}
+                },
+                body: JSON.stringify(obj)
+            })
+            // console.log(user_req,"data")
+            if (user_req.ok) {
+                alert("congratulation you registered successfully")
+                window.location.href = "logIn.html"
+                console.log(obj, "obj ---")
+            }
 
-}
+        }
 
-    catch (error){
-alert ("Error")
+        catch (error) {
+            alert("Error")
+        }
     }
-}
- 
+
 // async function new_user(obj){
 //     try{
 //  let user_req = await fetch("https://639ad40131877e43d677b046.mockapi.io/users",{  
