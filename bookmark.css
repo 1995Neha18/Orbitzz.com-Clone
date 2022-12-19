@@ -34,6 +34,8 @@ body {
     font-size: x-large;
     font-weight: 600;
     color: #ffffff;
+    text-decoration: none;
+
 }
 
 #right-section {
@@ -47,6 +49,8 @@ body {
     color: white;
     border: 0;
     font-weight: 600;
+    text-decoration: none;
+
 }
 
 #main-container{

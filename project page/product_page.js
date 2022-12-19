@@ -13,12 +13,12 @@ async function hotelPage() {
         let res = await fetch(`https://639ad40131877e43d677b046.mockapi.io/hotels/${hotelid}`);
         if (res.ok == true) {
             let output = await res.json()
+            // sessionStorage.setItem("city", output.city);
             bookmarksData = [output];
+            renderProductpage(output)
             // obj=output;
             // console.log(obj)
             // console.log(hotelid)
-            sessionStorage.setItem("city", output.city);
-            renderProductpage(output)
             // console.log(bookmarksData)
             // console.log(output["hotel-image-media src-1"])
 
@@ -321,8 +321,10 @@ async function alsoLikehotels() {
         else {
             alert("oops")
         }
-    } catch (error) {
-        alert(`Something wrong ${error}`)
+    }
+     catch (error) {
+        // alert(`Something wrong ${error}`)
+        console.log("hello")
     }
 }
 alsoLikehotels()

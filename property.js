@@ -134,6 +134,7 @@ function renderProperty(hotelarr) {
         div.addEventListener("click", () => {
             window.open("./project page/product_page.html", "_self");
             sessionStorage.setItem("hotelid", element.id);
+            sessionStorage.setItem("city", element.city);
         })
         cont.append(div);
 
